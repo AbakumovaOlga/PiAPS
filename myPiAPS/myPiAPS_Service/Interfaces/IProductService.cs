@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace myPiAPS_Service
+namespace myPiAPS_Service.Interfaces
 {
-    public class Class1
+    interface IProductService
     {
     }
 }

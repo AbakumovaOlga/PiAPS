@@ -19,9 +19,11 @@ namespace myPiAPS_Model
         public string Pole { get; set; }
 
 
+       // public int? StockId { get; set; }
+        public int? ShopHallId { get; set; }
 
 
-        public virtual Stock Stock { get; set; }
+      //  public virtual Stock Stock { get; set; }
 
         public virtual ShopHall ShopHall { get; set; }
     }
