@@ -23,6 +23,7 @@ namespace myPiAPS_Model
 
         public string AdvInf { get; set; }
 
+        public string Number { get; set; }
 
 
         public int ProdGroupId { get; set; }

@@ -60,6 +60,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindingModels\ProductGroupBM.cs" />
+    <Compile Include="BindingModels\TypeBM.cs" />
+    <Compile Include="ImplementationsBD\DelivareServiceBD.cs" />
+    <Compile Include="ImplementationsBD\DiagrServiceBD.cs" />
+    <Compile Include="ImplementationsBD\MainServiceBD.cs" />
+    <Compile Include="ImplementationsBD\ProdGroupServiceBD.cs" />
+    <Compile Include="ImplementationsBD\ProductServiceBD.cs" />
+    <Compile Include="ImplementationsBD\RecieptServiceBD.cs" />
+    <Compile Include="ImplementationsBD\RevalServiceBD.cs" />
+    <Compile Include="ImplementationsBD\TypeServiceBD.cs" />
+    <Compile Include="ImplementationsBD\UserServiceBD.cs" />
+    <Compile Include="ImplementationsBD\WaybillServiceBD.cs" />
+    <Compile Include="ImplementationsBD\WriteOffServiceBD.cs" />
     <Compile Include="Interfaces\IDelivareService.cs" />
     <Compile Include="Interfaces\IDiagrService.cs" />
     <Compile Include="Interfaces\IMainService.cs" />
@@ -77,6 +90,14 @@
     <Compile Include="Migrations\201901091243004_FirstMigration.cs" />
     <Compile Include="Migrations\201901091243004_FirstMigration.Designer.cs">
       <DependentUpon>201901091243004_FirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901111021575_SecondMigration.cs" />
+    <Compile Include="Migrations\201901111021575_SecondMigration.Designer.cs">
+      <DependentUpon>201901111021575_SecondMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901111219080_ThirdMigration.cs" />
+    <Compile Include="Migrations\201901111219080_ThirdMigration.Designer.cs">
+      <DependentUpon>201901111219080_ThirdMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PiAPSDbContext.cs" />
@@ -96,9 +117,13 @@
     <EmbeddedResource Include="Migrations\201901091243004_FirstMigration.resx">
       <DependentUpon>201901091243004_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901111021575_SecondMigration.resx">
+      <DependentUpon>201901111021575_SecondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901111219080_ThirdMigration.resx">
+      <DependentUpon>201901111219080_ThirdMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BindingModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

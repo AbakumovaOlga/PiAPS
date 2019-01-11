@@ -16,7 +16,7 @@ namespace myPiAPS_Model
 
         public string Password { get; set; }
 
-        public string Pole { get; set; }
+        public string Role { get; set; }
 
 
        // public int? StockId { get; set; }

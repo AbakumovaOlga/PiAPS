@@ -5,6 +5,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using myPiAPS_Service.Interfaces;
+using myPiAPS_Service.ImplementationsBD;
 using Unity;
 using Unity.Lifetime;
 
@@ -29,13 +32,17 @@ namespace myPiAPS
             var currentContainer = new UnityContainer();
 
             currentContainer.RegisterType<DbContext, PiAPSDbContext>(new HierarchicalLifetimeManager());
-            currentContainer.RegisterType<IUserService, CustomerServiceBD>(new HierarchicalLifetimeManager());
-            currentContainer.RegisterType<IIngredientService, IngredientServiceBD>(new HierarchicalLifetimeManager());
-            currentContainer.RegisterType<IBakerService, BakerServiceBD>(new HierarchicalLifetimeManager());
-            currentContainer.RegisterType<ICakeService, CakeServiceBD>(new HierarchicalLifetimeManager());
-            currentContainer.RegisterType<IFridgeService, FridgeServiceBD>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IDelivareService, DelivareServiceBD>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IDiagrService, DiagrServiceBD>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IRecieptService, RecieptServiceBD>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IRevalService, RevalServiceBD>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IWaybillService, WaybillServiceBD>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<IMainService, MainServiceBD>(new HierarchicalLifetimeManager());
-            currentContainer.RegisterType<IReportService, ReportServiceBD>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IWriteOffService, WriteOffServiceBD>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IUserService, UserServiceBD>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IProductService, ProductServiceBD>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IProdGroupService, ProdGroupServiceBD>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<ITypeOfWaybillService, TypeServiceBD>(new HierarchicalLifetimeManager());
 
             return currentContainer;
         }
