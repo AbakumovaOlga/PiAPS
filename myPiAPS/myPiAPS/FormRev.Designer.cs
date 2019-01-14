@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.label7 = new System.Windows.Forms.Label();
-            this.F_Number = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.F_Price = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.F_Group = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.F_Rev = new System.Windows.Forms.Button();
             this.F_RevGroup = new System.Windows.Forms.Button();
             this.F_Name = new System.Windows.Forms.ComboBox();
             this.F_Cancel = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.F_Date = new System.Windows.Forms.DateTimePicker();
+            this.F_Summa = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.F_Calc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label7
@@ -50,22 +51,6 @@
             this.label7.Size = new System.Drawing.Size(51, 20);
             this.label7.TabIndex = 25;
             this.label7.Text = "Name";
-            // 
-            // F_Number
-            // 
-            this.F_Number.Location = new System.Drawing.Point(185, 136);
-            this.F_Number.Name = "F_Number";
-            this.F_Number.Size = new System.Drawing.Size(283, 26);
-            this.F_Number.TabIndex = 24;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1, 142);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(166, 20);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Nomenclature number";
             // 
             // F_Price
             // 
@@ -82,23 +67,6 @@
             this.label3.Size = new System.Drawing.Size(44, 20);
             this.label3.TabIndex = 17;
             this.label3.Text = "Price";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 20);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Product group";
-            // 
-            // F_Group
-            // 
-            this.F_Group.FormattingEnabled = true;
-            this.F_Group.Location = new System.Drawing.Point(185, 93);
-            this.F_Group.Name = "F_Group";
-            this.F_Group.Size = new System.Drawing.Size(283, 28);
-            this.F_Group.TabIndex = 15;
             // 
             // label1
             // 
@@ -147,25 +115,69 @@
             this.F_Cancel.UseVisualStyleBackColor = true;
             this.F_Cancel.Click += new System.EventHandler(this.F_Cancel_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(108, 88);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 20);
+            this.label9.TabIndex = 44;
+            this.label9.Text = "Date";
+            // 
+            // F_Date
+            // 
+            this.F_Date.Location = new System.Drawing.Point(204, 88);
+            this.F_Date.Name = "F_Date";
+            this.F_Date.Size = new System.Drawing.Size(200, 26);
+            this.F_Date.TabIndex = 43;
+            // 
+            // F_Summa
+            // 
+            this.F_Summa.Location = new System.Drawing.Point(185, 270);
+            this.F_Summa.Name = "F_Summa";
+            this.F_Summa.Size = new System.Drawing.Size(305, 26);
+            this.F_Summa.TabIndex = 49;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(103, 276);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Summa";
+            // 
+            // F_Calc
+            // 
+            this.F_Calc.Location = new System.Drawing.Point(512, 234);
+            this.F_Calc.Name = "F_Calc";
+            this.F_Calc.Size = new System.Drawing.Size(93, 35);
+            this.F_Calc.TabIndex = 50;
+            this.F_Calc.Text = "Рассчитать";
+            this.F_Calc.UseVisualStyleBackColor = true;
+            this.F_Calc.Click += new System.EventHandler(this.F_Calc_Click);
+            // 
             // FormRev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.F_Calc);
+            this.Controls.Add(this.F_Summa);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.F_Date);
             this.Controls.Add(this.F_Cancel);
             this.Controls.Add(this.F_Name);
             this.Controls.Add(this.F_RevGroup);
             this.Controls.Add(this.F_Rev);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.F_Number);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.F_Price);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.F_Group);
             this.Name = "FormRev";
             this.Text = "FormRev";
+            this.Load += new System.EventHandler(this.FormRev_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,16 +185,17 @@
 
         #endregion
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox F_Number;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox F_Price;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox F_Group;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button F_Rev;
         private System.Windows.Forms.Button F_RevGroup;
         private System.Windows.Forms.ComboBox F_Name;
         private System.Windows.Forms.Button F_Cancel;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker F_Date;
+        private System.Windows.Forms.TextBox F_Summa;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button F_Calc;
     }
 }

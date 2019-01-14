@@ -43,6 +43,8 @@ namespace myPiAPS
             currentContainer.RegisterType<IProductService, ProductServiceBD>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<IProdGroupService, ProdGroupServiceBD>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<ITypeOfWaybillService, TypeServiceBD>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IStockService, StockServiceBD>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IShopHallService, ShopHallServiceBD>(new HierarchicalLifetimeManager());
 
             return currentContainer;
         }

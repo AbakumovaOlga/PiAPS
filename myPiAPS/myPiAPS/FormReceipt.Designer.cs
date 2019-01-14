@@ -45,6 +45,18 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.F_Add = new System.Windows.Forms.Button();
             this.F_NewGroup = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.F_Stock = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.F_Products = new System.Windows.Forms.DataGridView();
+            this.FCakeRel = new System.Windows.Forms.Button();
+            this.FCakeDel = new System.Windows.Forms.Button();
+            this.FCakeUpd = new System.Windows.Forms.Button();
+            this.F_AddProd = new System.Windows.Forms.Button();
+            this.F_Date = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.F_Products)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,7 +91,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(204, 91);
+            this.comboBox1.Location = new System.Drawing.Point(868, 468);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(305, 28);
             this.comboBox1.TabIndex = 3;
@@ -87,7 +99,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(77, 94);
+            this.label2.Location = new System.Drawing.Point(741, 471);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 20);
             this.label2.TabIndex = 4;
@@ -96,7 +108,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(142, 254);
+            this.label3.Location = new System.Drawing.Point(806, 631);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 20);
             this.label3.TabIndex = 5;
@@ -104,7 +116,7 @@
             // 
             // F_Price
             // 
-            this.F_Price.Location = new System.Drawing.Point(204, 248);
+            this.F_Price.Location = new System.Drawing.Point(868, 625);
             this.F_Price.Name = "F_Price";
             this.F_Price.Size = new System.Drawing.Size(305, 26);
             this.F_Price.TabIndex = 6;
@@ -112,7 +124,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(134, 214);
+            this.label4.Location = new System.Drawing.Point(798, 591);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 20);
             this.label4.TabIndex = 7;
@@ -120,7 +132,7 @@
             // 
             // F_Count
             // 
-            this.F_Count.Location = new System.Drawing.Point(204, 211);
+            this.F_Count.Location = new System.Drawing.Point(868, 588);
             this.F_Count.Name = "F_Count";
             this.F_Count.Size = new System.Drawing.Size(305, 26);
             this.F_Count.TabIndex = 8;
@@ -144,7 +156,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 140);
+            this.label6.Location = new System.Drawing.Point(684, 517);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(166, 20);
             this.label6.TabIndex = 11;
@@ -152,7 +164,7 @@
             // 
             // F_Number
             // 
-            this.F_Number.Location = new System.Drawing.Point(204, 134);
+            this.F_Number.Location = new System.Drawing.Point(868, 511);
             this.F_Number.Name = "F_Number";
             this.F_Number.Size = new System.Drawing.Size(305, 26);
             this.F_Number.TabIndex = 12;
@@ -160,7 +172,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(135, 178);
+            this.label7.Location = new System.Drawing.Point(799, 555);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 20);
             this.label7.TabIndex = 13;
@@ -168,14 +180,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(204, 175);
+            this.textBox1.Location = new System.Drawing.Point(868, 552);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(305, 26);
             this.textBox1.TabIndex = 14;
             // 
             // F_Add
             // 
-            this.F_Add.Location = new System.Drawing.Point(705, 123);
+            this.F_Add.Location = new System.Drawing.Point(1369, 500);
             this.F_Add.Name = "F_Add";
             this.F_Add.Size = new System.Drawing.Size(75, 32);
             this.F_Add.TabIndex = 32;
@@ -185,16 +197,114 @@
             // 
             // F_NewGroup
             // 
-            this.F_NewGroup.Location = new System.Drawing.Point(537, 91);
+            this.F_NewGroup.Location = new System.Drawing.Point(1201, 468);
             this.F_NewGroup.Name = "F_NewGroup";
             this.F_NewGroup.Size = new System.Drawing.Size(243, 26);
             this.F_NewGroup.TabIndex = 31;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(122, 333);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 20);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Stock";
+            // 
+            // F_Stock
+            // 
+            this.F_Stock.FormattingEnabled = true;
+            this.F_Stock.Location = new System.Drawing.Point(204, 325);
+            this.F_Stock.Name = "F_Stock";
+            this.F_Stock.Size = new System.Drawing.Size(305, 28);
+            this.F_Stock.TabIndex = 34;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.F_Products);
+            this.groupBox1.Controls.Add(this.FCakeRel);
+            this.groupBox1.Controls.Add(this.FCakeDel);
+            this.groupBox1.Controls.Add(this.FCakeUpd);
+            this.groupBox1.Controls.Add(this.F_AddProd);
+            this.groupBox1.Location = new System.Drawing.Point(786, 18);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(674, 414);
+            this.groupBox1.TabIndex = 35;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Products";
+            // 
+            // F_Products
+            // 
+            this.F_Products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.F_Products.Location = new System.Drawing.Point(21, 36);
+            this.F_Products.Name = "F_Products";
+            this.F_Products.RowTemplate.Height = 28;
+            this.F_Products.Size = new System.Drawing.Size(527, 342);
+            this.F_Products.TabIndex = 8;
+            // 
+            // FCakeRel
+            // 
+            this.FCakeRel.Location = new System.Drawing.Point(570, 157);
+            this.FCakeRel.Name = "FCakeRel";
+            this.FCakeRel.Size = new System.Drawing.Size(90, 38);
+            this.FCakeRel.TabIndex = 7;
+            this.FCakeRel.Text = "Reload";
+            this.FCakeRel.UseVisualStyleBackColor = true;
+            // 
+            // FCakeDel
+            // 
+            this.FCakeDel.Location = new System.Drawing.Point(570, 113);
+            this.FCakeDel.Name = "FCakeDel";
+            this.FCakeDel.Size = new System.Drawing.Size(90, 38);
+            this.FCakeDel.TabIndex = 6;
+            this.FCakeDel.Text = "Delete";
+            this.FCakeDel.UseVisualStyleBackColor = true;
+            // 
+            // FCakeUpd
+            // 
+            this.FCakeUpd.Location = new System.Drawing.Point(570, 69);
+            this.FCakeUpd.Name = "FCakeUpd";
+            this.FCakeUpd.Size = new System.Drawing.Size(90, 38);
+            this.FCakeUpd.TabIndex = 5;
+            this.FCakeUpd.Text = "Update";
+            this.FCakeUpd.UseVisualStyleBackColor = true;
+            // 
+            // F_AddProd
+            // 
+            this.F_AddProd.Location = new System.Drawing.Point(570, 25);
+            this.F_AddProd.Name = "F_AddProd";
+            this.F_AddProd.Size = new System.Drawing.Size(90, 38);
+            this.F_AddProd.TabIndex = 4;
+            this.F_AddProd.Text = "Add";
+            this.F_AddProd.UseVisualStyleBackColor = true;
+            this.F_AddProd.Click += new System.EventHandler(this.F_AddProd_Click);
+            // 
+            // F_Date
+            // 
+            this.F_Date.Location = new System.Drawing.Point(204, 99);
+            this.F_Date.Name = "F_Date";
+            this.F_Date.Size = new System.Drawing.Size(200, 26);
+            this.F_Date.TabIndex = 36;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(108, 99);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 20);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "Date";
             // 
             // FormReceipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1483, 715);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.F_Date);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.F_Stock);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.F_Add);
             this.Controls.Add(this.F_NewGroup);
             this.Controls.Add(this.textBox1);
@@ -215,6 +325,8 @@
             this.Name = "FormReceipt";
             this.Text = "Receipt";
             this.Load += new System.EventHandler(this.FormReceipt_Load);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.F_Products)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,5 +351,15 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button F_Add;
         private System.Windows.Forms.TextBox F_NewGroup;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox F_Stock;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView F_Products;
+        private System.Windows.Forms.Button FCakeRel;
+        private System.Windows.Forms.Button FCakeDel;
+        private System.Windows.Forms.Button FCakeUpd;
+        private System.Windows.Forms.Button F_AddProd;
+        private System.Windows.Forms.DateTimePicker F_Date;
+        private System.Windows.Forms.Label label9;
     }
 }

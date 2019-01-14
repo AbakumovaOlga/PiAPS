@@ -43,6 +43,8 @@
             this.F_Diagram = new System.Windows.Forms.Button();
             this.F_ChooseGrop = new System.Windows.Forms.ComboBox();
             this.F_Print = new System.Windows.Forms.Button();
+            this.F_Load = new System.Windows.Forms.Button();
+            this.F_GropFind = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.F_GoodsList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +95,7 @@
             // 
             // F_Find
             // 
-            this.F_Find.Location = new System.Drawing.Point(568, 17);
+            this.F_Find.Location = new System.Drawing.Point(526, 17);
             this.F_Find.Name = "F_Find";
             this.F_Find.Size = new System.Drawing.Size(77, 30);
             this.F_Find.TabIndex = 14;
@@ -174,7 +176,7 @@
             // F_ChooseGrop
             // 
             this.F_ChooseGrop.FormattingEnabled = true;
-            this.F_ChooseGrop.Location = new System.Drawing.Point(689, 19);
+            this.F_ChooseGrop.Location = new System.Drawing.Point(609, 19);
             this.F_ChooseGrop.Name = "F_ChooseGrop";
             this.F_ChooseGrop.Size = new System.Drawing.Size(266, 28);
             this.F_ChooseGrop.TabIndex = 22;
@@ -189,11 +191,33 @@
             this.F_Print.UseVisualStyleBackColor = true;
             this.F_Print.Click += new System.EventHandler(this.F_Print_Click);
             // 
+            // F_Load
+            // 
+            this.F_Load.Location = new System.Drawing.Point(968, 19);
+            this.F_Load.Name = "F_Load";
+            this.F_Load.Size = new System.Drawing.Size(27, 25);
+            this.F_Load.TabIndex = 24;
+            this.F_Load.Text = "-";
+            this.F_Load.UseVisualStyleBackColor = true;
+            this.F_Load.Click += new System.EventHandler(this.F_Load_Click);
+            // 
+            // F_GropFind
+            // 
+            this.F_GropFind.Location = new System.Drawing.Point(881, 17);
+            this.F_GropFind.Name = "F_GropFind";
+            this.F_GropFind.Size = new System.Drawing.Size(77, 30);
+            this.F_GropFind.TabIndex = 25;
+            this.F_GropFind.Text = "Group";
+            this.F_GropFind.UseVisualStyleBackColor = true;
+            this.F_GropFind.Click += new System.EventHandler(this.F_GropFind_Click);
+            // 
             // FormMainK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1007, 450);
+            this.Controls.Add(this.F_GropFind);
+            this.Controls.Add(this.F_Load);
             this.Controls.Add(this.F_Print);
             this.Controls.Add(this.F_ChooseGrop);
             this.Controls.Add(this.F_Diagram);
@@ -211,6 +235,7 @@
             this.Controls.Add(this.F_Receipt);
             this.Name = "FormMainK";
             this.Text = "FormMainK";
+            this.Load += new System.EventHandler(this.FormMainK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.F_GoodsList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -234,5 +259,7 @@
         private System.Windows.Forms.Button F_Diagram;
         private System.Windows.Forms.ComboBox F_ChooseGrop;
         private System.Windows.Forms.Button F_Print;
+        private System.Windows.Forms.Button F_Load;
+        private System.Windows.Forms.Button F_GropFind;
     }
 }

@@ -28,34 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.F_Products = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.F_Products)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // F_Products
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 426);
-            this.dataGridView1.TabIndex = 0;
+            this.F_Products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.F_Products.Location = new System.Drawing.Point(12, 12);
+            this.F_Products.Name = "F_Products";
+            this.F_Products.RowTemplate.Height = 28;
+            this.F_Products.Size = new System.Drawing.Size(776, 426);
+            this.F_Products.TabIndex = 0;
             // 
             // FormLess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.F_Products);
             this.Name = "FormLess";
             this.Text = "FormLess";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormLess_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.F_Products)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView F_Products;
     }
 }

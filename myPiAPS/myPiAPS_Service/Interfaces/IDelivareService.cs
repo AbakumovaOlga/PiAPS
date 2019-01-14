@@ -1,4 +1,5 @@
 ﻿using myPiAPS_Model;
+using myPiAPS_Service.BindingModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,15 @@ namespace myPiAPS_Service.Interfaces
 {
    public interface IDelivareService
     {
-        //Расход 4
-        void CreateDelivare(Waybill model);
+        //выдача 3
+        void CreateDelivare(WaybillBM model);
 
-        void UpdDelivare(Waybill model);
+        void UpdDelivare(WaybillBM model);
 
-        void DelDelivare(Waybill model);
+        void DelDelivare(WaybillBM model);
 
-        List<Waybill> GetList();
+        List<WaybillBM> GetList();
 
-        Waybill GetElement(int id);
+        WaybillBM GetElement(int id);
     }
 }

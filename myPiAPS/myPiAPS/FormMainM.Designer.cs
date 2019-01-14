@@ -32,6 +32,8 @@
             this.F_CrProduct = new System.Windows.Forms.Button();
             this.F_CrProdGr = new System.Windows.Forms.Button();
             this.F_CrType = new System.Windows.Forms.Button();
+            this.F_CrStock = new System.Windows.Forms.Button();
+            this.F_CrSH = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // F_CrUser
@@ -74,11 +76,33 @@
             this.F_CrType.UseVisualStyleBackColor = true;
             this.F_CrType.Click += new System.EventHandler(this.F_CrType_Click);
             // 
+            // F_CrStock
+            // 
+            this.F_CrStock.Location = new System.Drawing.Point(395, 277);
+            this.F_CrStock.Name = "F_CrStock";
+            this.F_CrStock.Size = new System.Drawing.Size(122, 40);
+            this.F_CrStock.TabIndex = 48;
+            this.F_CrStock.Text = "CreateStock";
+            this.F_CrStock.UseVisualStyleBackColor = true;
+            this.F_CrStock.Click += new System.EventHandler(this.F_CrStock_Click);
+            // 
+            // F_CrSH
+            // 
+            this.F_CrSH.Location = new System.Drawing.Point(535, 218);
+            this.F_CrSH.Name = "F_CrSH";
+            this.F_CrSH.Size = new System.Drawing.Size(122, 40);
+            this.F_CrSH.TabIndex = 49;
+            this.F_CrSH.Text = "CreateSH";
+            this.F_CrSH.UseVisualStyleBackColor = true;
+            this.F_CrSH.Click += new System.EventHandler(this.F_CrSH_Click);
+            // 
             // FormMainM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.F_CrSH);
+            this.Controls.Add(this.F_CrStock);
             this.Controls.Add(this.F_CrType);
             this.Controls.Add(this.F_CrProdGr);
             this.Controls.Add(this.F_CrProduct);
@@ -95,5 +119,7 @@
         private System.Windows.Forms.Button F_CrProduct;
         private System.Windows.Forms.Button F_CrProdGr;
         private System.Windows.Forms.Button F_CrType;
+        private System.Windows.Forms.Button F_CrStock;
+        private System.Windows.Forms.Button F_CrSH;
     }
 }

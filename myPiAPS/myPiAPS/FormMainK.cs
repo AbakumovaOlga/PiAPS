@@ -1,4 +1,6 @@
-﻿using System;
+﻿using myPiAPS_Service.BindingModels;
+using myPiAPS_Service.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,79 +9,178 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unity;
+using Unity.Attributes;
 
 namespace myPiAPS
 {
     public partial class FormMainK : Form
     {
-        public FormMainK()
+        [Dependency]
+        public new IUnityContainer Container { get; set; }
+
+        private readonly IProductService _serviceP;
+        private readonly IProdGroupService _servicePG;
+        private readonly IMainService _serviceM;
+
+
+        public FormMainK(IProductService serviceP, IProdGroupService servicePG, IMainService serviceM)
         {
+            _serviceP = serviceP;
+            _servicePG = servicePG;
+            _serviceM = serviceM;
             InitializeComponent();
         }
 
         private void F_Receipt_Click(object sender, EventArgs e)
         {
-            var form = new FormReceipt();
+            var form = Container.Resolve<FormReceipt>();
             form.Show();
         }
 
         private void F_Less_Click(object sender, EventArgs e)
         {
-            var form = new FormLess();
+            var form = Container.Resolve<FormLess>();
             form.Show();
         }
 
         private void F_Delivary_Click(object sender, EventArgs e)
         {
-            var form = new FormDelivary();
+            var form = Container.Resolve<FormDelivary>();
             form.Show();
         }
 
         private void F_Write_Click(object sender, EventArgs e)
         {
-            var form = new FormWrite();
+            var form = Container.Resolve<FormWrite>();
             form.Show();
         }
 
         private void F_Rev_Click(object sender, EventArgs e)
         {
-            var form = new FormRev();
+            var form = Container.Resolve<FormRev>();
             form.Show();
         }
 
         private void F_Archive_Click(object sender, EventArgs e)
         {
-            var form = new FormArchive();
+            var form = Container.Resolve<FormArchive>();
             form.Show();
         }
 
         private void F_Find_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                List<ProductBM> list = _serviceM.FindProd(F_Number.Text);
+                if (list != null)
+                {
+                    F_GoodsList.DataSource = list;
+                    F_GoodsList.Columns[0].Visible = false;
+                    //  F_GoodsList.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void F_Sum_Click(object sender, EventArgs e)
         {
-            var form = new FormSumToday();
+            var form = Container.Resolve<FormSumToday>();
             form.Show();
         }
 
         private void F_Diagram_Click(object sender, EventArgs e)
         {
-            var form = new FormDiagram();
+            var form = Container.Resolve<FormDiagram>();
             form.Show();
         }
 
         private void F_SumDeliv_Click(object sender, EventArgs e)
         {
-            var form = new FormSumDeliv();
+            var form = Container.Resolve<FormSumDeliv>();
             form.Show();
         }
 
         private void F_Print_Click(object sender, EventArgs e)
         {
-            var form = new FormPrint();
+            var form = Container.Resolve<FormPrint>();
             form.Show();
+        }
+
+        private void FormMainK_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                List<ProductBM> list = _serviceP.GetList();
+                if (list != null)
+                {
+                    F_GoodsList.DataSource = list;
+                    F_GoodsList.Columns[0].Visible = false;
+                  //  F_GoodsList.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            try
+            {
+                List<ProductGroupBM> list = _servicePG.GetListComboBox();
+                if (list != null)
+                {
+                    F_ChooseGrop.DisplayMember = "Name";
+                    F_ChooseGrop.ValueMember = "Id";
+                    F_ChooseGrop.DataSource = list;
+                    F_ChooseGrop.SelectedItem = null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void F_Load_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<ProductBM> list = _serviceP.GetList();
+                if (list != null)
+                {
+                    F_GoodsList.DataSource = list;
+                    F_GoodsList.Columns[0].Visible = false;
+                    //  F_GoodsList.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            F_ChooseGrop.SelectedItem = null;
+            F_Number.Text = "";
+        }
+
+        private void F_GropFind_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<ProductBM> list = _serviceM.Sort(Convert.ToInt32(F_ChooseGrop.SelectedValue));
+                if (list != null)
+                {
+                    F_GoodsList.DataSource = list;
+                    F_GoodsList.Columns[0].Visible = false;
+                    //  F_GoodsList.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

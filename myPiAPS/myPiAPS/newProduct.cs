@@ -43,11 +43,12 @@ namespace myPiAPS
                     MessageBox.Show("Выберите group", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                _serviceP.CreateProduct(new Product
+                _serviceP.CreateProduct(new ProductBM
                 {
                     Name = F_Name.Text,
                     Price = Convert.ToDouble(F_Price.Text),
-                    ProdGroupId = Convert.ToInt32(F_Group.SelectedValue)
+                    ProdGroupId = Convert.ToInt32(F_Group.SelectedValue),
+                    Number=F_Number.Text                    
                 });
 
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);

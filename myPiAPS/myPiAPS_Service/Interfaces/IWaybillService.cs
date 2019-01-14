@@ -1,4 +1,5 @@
-﻿using System;
+﻿using myPiAPS_Service.BindingModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,8 @@ namespace myPiAPS_Service.Interfaces
         double SumToday();
 
         double SumDeliv(int idDeliv);
+
+        List<WaybillBM> GetListDeliv();
+        List<WaybillBM> GetListToday();
     }
 }

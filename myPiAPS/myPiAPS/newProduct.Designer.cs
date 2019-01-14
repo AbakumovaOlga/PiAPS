@@ -35,6 +35,8 @@
             this.F_Price = new System.Windows.Forms.TextBox();
             this.F_Group = new System.Windows.Forms.ComboBox();
             this.F_OK = new System.Windows.Forms.Button();
+            this.F_Number = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label3
@@ -96,11 +98,29 @@
             this.F_OK.UseVisualStyleBackColor = true;
             this.F_OK.Click += new System.EventHandler(this.F_OK_Click);
             // 
+            // F_Number
+            // 
+            this.F_Number.Location = new System.Drawing.Point(546, 249);
+            this.F_Number.Name = "F_Number";
+            this.F_Number.Size = new System.Drawing.Size(158, 26);
+            this.F_Number.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(448, 255);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Number";
+            // 
             // newProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.F_Number);
             this.Controls.Add(this.F_OK);
             this.Controls.Add(this.F_Group);
             this.Controls.Add(this.F_Price);
@@ -124,5 +144,7 @@
         private System.Windows.Forms.TextBox F_Price;
         private System.Windows.Forms.ComboBox F_Group;
         private System.Windows.Forms.Button F_OK;
+        private System.Windows.Forms.TextBox F_Number;
+        private System.Windows.Forms.Label label1;
     }
 }

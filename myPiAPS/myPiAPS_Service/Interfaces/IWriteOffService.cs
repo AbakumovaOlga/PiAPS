@@ -1,4 +1,5 @@
 ﻿using myPiAPS_Model;
+using myPiAPS_Service.BindingModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,15 @@ namespace myPiAPS_Service.Interfaces
 {
     public interface IWriteOffService
     {
-        //Списать 3
-        void CreateWriteOff(Waybill model);
+        //Списать 4
+        void CreateWriteOff(WaybillBM model);
 
-        void UpdWriteOff(Waybill model);
+        void UpdWriteOff(WaybillBM model);
 
-        void DelWriteOff(Waybill model);
+        void DelWriteOff(WaybillBM model);
 
-        List<Waybill> GetList();
+        List<WaybillBM> GetList();
 
-        Waybill GetElement(int id);
+        WaybillBM GetElement(int id);
     }
 }

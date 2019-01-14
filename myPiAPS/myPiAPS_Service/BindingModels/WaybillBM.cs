@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace myPiAPS_Model
+namespace myPiAPS_Service.BindingModels
 {
-    public class Waybill
+   public class WaybillBM
     {
         public int Id { get; set; }
 
@@ -24,12 +23,6 @@ namespace myPiAPS_Model
         public int? ShopHallId { get; set; }
         public int? StockId { get; set; }
 
-        public virtual TypeOfWaybill TypeOfWaybill { get; set; }
-        public virtual ShopHall ShopHall { get; set; }
-        public virtual Stock Stock { get; set; }
-
-
-        [ForeignKey("WaybillId")]
-        public virtual List<ProductWaybill> ProductWaybills { get; set; }
+        public List<ProductWaybillBM> ProductWaybills { get; set; }
     }
 }

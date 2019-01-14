@@ -144,6 +144,12 @@
     <Compile Include="FormPrint.Designer.cs">
       <DependentUpon>FormPrint.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProductWaybill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductWaybill.Designer.cs">
+      <DependentUpon>FormProductWaybill.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormReceipt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,18 @@
     <Compile Include="newProduct.Designer.cs">
       <DependentUpon>newProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="newShopHall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newShopHall.Designer.cs">
+      <DependentUpon>newShopHall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newStock.Designer.cs">
+      <DependentUpon>newStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="newType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +255,9 @@
     <EmbeddedResource Include="FormPrint.resx">
       <DependentUpon>FormPrint.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormProductWaybill.resx">
+      <DependentUpon>FormProductWaybill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReceipt.resx">
       <DependentUpon>FormReceipt.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +287,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="newProduct.resx">
       <DependentUpon>newProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newShopHall.resx">
+      <DependentUpon>newShopHall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newStock.resx">
+      <DependentUpon>newStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="newType.resx">
       <DependentUpon>newType.cs</DependentUpon>

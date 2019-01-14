@@ -1,4 +1,5 @@
 ﻿using myPiAPS_Model;
+using myPiAPS_Service.BindingModels;
 using myPiAPS_Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace myPiAPS_Service.ImplementationsBD
 {
-   public class MainServiceBD : IMainService
+
+    public class MainServiceBD : IMainService
     {
         //private static readonly InsuranceCompanyDbContext _context = new InsuranceCompanyDbContext();
         private PiAPSDbContext context;
@@ -19,7 +21,7 @@ namespace myPiAPS_Service.ImplementationsBD
         }
         private static Encoding ascii = Encoding.ASCII;
 
-       // private static User _user;
+        // private static User _user;
 
         public void Archive()
         {
@@ -37,14 +39,118 @@ namespace myPiAPS_Service.ImplementationsBD
             return user;
         }
 
-        public Product FindProd(int idProd)
+        public List<ProductBM> FindProd(string idProd)
         {
-            throw new NotImplementedException();
+            List<ProductBM> result = context.Products
+                .Select(rec => new ProductBM
+                {
+                    Id = rec.Id,
+                    Name = rec.Name,
+                    Price = rec.Price,
+                    ProdGroupId = rec.ProdGroupId,
+                    Mark = rec.Mark,
+                    AdvInf = rec.AdvInf,
+                    Producer = rec.Producer,
+                    Provider = rec.Provider,
+                    Number = rec.Number
+                }).Where(recPG => recPG.Number == idProd)
+                .ToList();
+            return result;
         }
 
-        public List<Product> Sort(int idGroup)
+        public List<ProductBM> Sort(int idGroup)
         {
-            throw new NotImplementedException();
+            List<ProductBM> result = context.Products
+                .Select(rec => new ProductBM
+                {
+                    Id = rec.Id,
+                    Name = rec.Name,
+                    Price = rec.Price,
+                    ProdGroupId = rec.ProdGroupId,
+                    Mark = rec.Mark,
+                    AdvInf = rec.AdvInf,
+                    Producer = rec.Producer,
+                    Provider = rec.Provider,
+                    Number = rec.Number
+                }).Where(recPG => recPG.ProdGroupId == idGroup)
+                .ToList();
+            return result;
+        }
+
+        public List<ProductBM> Less()
+        {
+            List<ProductBM> result = new List<ProductBM>();
+            List<WaybillBM> waybills = context.Waybills.Select(rec => new WaybillBM
+            {
+                Id = rec.Id,
+                TypeOfWaybillId = rec.TypeOfWaybillId
+            }).ToList();
+
+            List<ProductBM> products = context.Products.Select(rec => new ProductBM
+            {
+                Id = rec.Id,
+                ProdGroupId = rec.ProdGroupId,
+                Name = rec.Name,
+                Mark = rec.Mark,
+                Producer = rec.Producer,
+                Provider = rec.Provider,
+                Price = rec.Price,
+                AdvInf = rec.AdvInf,
+                Number = rec.Number
+            }).ToList();
+
+            double SumProdictsOld = 0;
+            double SumProdictsNew = 0;
+            foreach (ProductBM prod in products)
+            {
+                int haves = 0;
+                ProdGroup pg = context.ProdGroups.FirstOrDefault(rec => rec.Id == prod.ProdGroupId);
+                int norm = pg.Norm;
+
+                foreach (WaybillBM wb in waybills)
+                {
+                    if (wb.TypeOfWaybillId == 2)
+                    {
+                        List<ProductWaybillBM> productWaybills = context.ProductWaybills.Select(rec => new ProductWaybillBM
+                        {
+                            Id = rec.Id,
+                            ProductId = rec.ProductId,
+                            WaybillId = rec.WaybillId,
+                            Count = rec.Count
+                        }).Where(rec => rec.WaybillId == wb.Id & rec.ProductId == prod.Id)
+                        .ToList();
+
+                        foreach (ProductWaybillBM p in productWaybills)
+                        {
+                            haves += p.Count;
+                        }
+                    }
+
+                    if (wb.TypeOfWaybillId == 3 || wb.TypeOfWaybillId == 4)
+                    {
+                        List<ProductWaybillBM> productWaybills = context.ProductWaybills.Select(rec => new ProductWaybillBM
+                        {
+                            Id = rec.Id,
+                            ProductId = rec.ProductId,
+                            WaybillId = rec.WaybillId,
+                            Count = rec.Count
+                        }).Where(rec => rec.WaybillId == wb.Id & rec.ProductId == prod.Id)
+                        .ToList();
+
+                        foreach (ProductWaybillBM p in productWaybills)
+                        {
+                            haves -= p.Count;
+                        }
+                    }
+
+
+                }
+                if (haves < norm)
+                {
+                    result.Add(prod);
+                }
+            }
+            return result;
         }
     }
 }

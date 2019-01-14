@@ -60,8 +60,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindingModels\ProductBM.cs" />
     <Compile Include="BindingModels\ProductGroupBM.cs" />
+    <Compile Include="BindingModels\ProductWaybillBM.cs" />
+    <Compile Include="BindingModels\ShopHallBM.cs" />
+    <Compile Include="BindingModels\StockBM.cs" />
     <Compile Include="BindingModels\TypeBM.cs" />
+    <Compile Include="BindingModels\WaybillBM.cs" />
     <Compile Include="ImplementationsBD\DelivareServiceBD.cs" />
     <Compile Include="ImplementationsBD\DiagrServiceBD.cs" />
     <Compile Include="ImplementationsBD\MainServiceBD.cs" />
@@ -69,6 +74,8 @@
     <Compile Include="ImplementationsBD\ProductServiceBD.cs" />
     <Compile Include="ImplementationsBD\RecieptServiceBD.cs" />
     <Compile Include="ImplementationsBD\RevalServiceBD.cs" />
+    <Compile Include="ImplementationsBD\ShopHallServiceBD.cs" />
+    <Compile Include="ImplementationsBD\StockServiceBD.cs" />
     <Compile Include="ImplementationsBD\TypeServiceBD.cs" />
     <Compile Include="ImplementationsBD\UserServiceBD.cs" />
     <Compile Include="ImplementationsBD\WaybillServiceBD.cs" />
@@ -99,6 +106,14 @@
     <Compile Include="Migrations\201901111219080_ThirdMigration.Designer.cs">
       <DependentUpon>201901111219080_ThirdMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901121103576_PRODPriceRequired.cs" />
+    <Compile Include="Migrations\201901121103576_PRODPriceRequired.Designer.cs">
+      <DependentUpon>201901121103576_PRODPriceRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901121123352_WBNotRequredIDS.cs" />
+    <Compile Include="Migrations\201901121123352_WBNotRequredIDS.Designer.cs">
+      <DependentUpon>201901121123352_WBNotRequredIDS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PiAPSDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,6 +137,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901111219080_ThirdMigration.resx">
       <DependentUpon>201901111219080_ThirdMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901121103576_PRODPriceRequired.resx">
+      <DependentUpon>201901121103576_PRODPriceRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901121123352_WBNotRequredIDS.resx">
+      <DependentUpon>201901121123352_WBNotRequredIDS.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

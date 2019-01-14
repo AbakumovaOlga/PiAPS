@@ -1,4 +1,5 @@
 ﻿using myPiAPS_Model;
+using myPiAPS_Service.BindingModels;
 using myPiAPS_Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace myPiAPS_Service.ImplementationsBD
             this.context = context;
         }
 
-        public void CreateProduct(Product model)
+        public void CreateProduct(ProductBM model)
         {
             Product element = context.Products.FirstOrDefault(rec => rec.Name == model.Name|| rec.Number == model.Number);
             if (element != null)
@@ -38,17 +39,17 @@ namespace myPiAPS_Service.ImplementationsBD
             context.SaveChanges();
         }
 
-        public void DelProduct(Product model)
+        public void DelProduct(ProductBM model)
         {
             throw new NotImplementedException();
         }
 
-        public Product GetElement(int id)
+        public ProductBM GetElement(int id)
         {
             Product element = context.Products.FirstOrDefault(rec => rec.Id == id);
             if (element != null)
             {
-                return new Product
+                return new ProductBM
                 {
                     Id = element.Id,
                     Name = element.Name,
@@ -64,10 +65,10 @@ namespace myPiAPS_Service.ImplementationsBD
             throw new Exception("Элемент не найден");
         }
 
-        public List<Product> GetList()
+        public List<ProductBM> GetList()
         {
-            List<Product> result = context.Products
-                .Select(rec => new Product
+            List<ProductBM> result = context.Products
+                .Select(rec => new ProductBM
                 {
                     Id = rec.Id,
                     Name = rec.Name,
@@ -83,7 +84,7 @@ namespace myPiAPS_Service.ImplementationsBD
             return result;
         }
 
-        public void UpdProduct(Product model)
+        public void UpdProduct(ProductBM model)
         {
             throw new NotImplementedException();
         }

@@ -28,31 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.F_GoodsSales = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.F_Delivs = new System.Windows.Forms.DataGridView();
             this.F_Sales = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.F_Summa = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.F_GoodsSales)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.F_Delivs)).BeginInit();
             this.SuspendLayout();
             // 
-            // F_GoodsSales
+            // F_Delivs
             // 
-            this.F_GoodsSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.F_GoodsSales.Location = new System.Drawing.Point(12, 63);
-            this.F_GoodsSales.Name = "F_GoodsSales";
-            this.F_GoodsSales.RowTemplate.Height = 28;
-            this.F_GoodsSales.Size = new System.Drawing.Size(776, 375);
-            this.F_GoodsSales.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Sales invoice";
+            this.F_Delivs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.F_Delivs.Location = new System.Drawing.Point(12, 63);
+            this.F_Delivs.Name = "F_Delivs";
+            this.F_Delivs.RowTemplate.Height = 28;
+            this.F_Delivs.Size = new System.Drawing.Size(776, 375);
+            this.F_Delivs.TabIndex = 0;
             // 
             // F_Sales
             // 
@@ -78,6 +69,15 @@
             this.F_Summa.Size = new System.Drawing.Size(234, 26);
             this.F_Summa.TabIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Sales invoice";
+            // 
             // FormSumDeliv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -87,10 +87,11 @@
             this.Controls.Add(this.F_Summa);
             this.Controls.Add(this.F_Sales);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.F_GoodsSales);
+            this.Controls.Add(this.F_Delivs);
             this.Name = "FormSumDeliv";
             this.Text = "FormSumDeliv";
-            ((System.ComponentModel.ISupportInitialize)(this.F_GoodsSales)).EndInit();
+            this.Load += new System.EventHandler(this.FormSumDeliv_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.F_Delivs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,10 +99,10 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView F_GoodsSales;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView F_Delivs;
         private System.Windows.Forms.ComboBox F_Sales;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox F_Summa;
+        private System.Windows.Forms.Label label1;
     }
 }

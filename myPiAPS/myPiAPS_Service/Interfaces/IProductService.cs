@@ -1,4 +1,5 @@
 ﻿using myPiAPS_Model;
+using myPiAPS_Service.BindingModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,14 @@ namespace myPiAPS_Service.Interfaces
 {
    public  interface IProductService
     {
-        void CreateProduct(Product model);
+        void CreateProduct(ProductBM model);
 
-        void UpdProduct(Product model);
+        void UpdProduct(ProductBM model);
 
-        void DelProduct(Product model);
+        void DelProduct(ProductBM model);
 
-        List<Product> GetList();
+        List<ProductBM> GetList();
 
-        Product GetElement(int id);
+        ProductBM GetElement(int id);
     }
 }

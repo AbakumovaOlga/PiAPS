@@ -69,6 +69,7 @@
             this.Controls.Add(this.F_TodayList);
             this.Name = "FormSumToday";
             this.Text = "FormSumToday";
+            this.Load += new System.EventHandler(this.FormSumToday_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.F_TodayList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

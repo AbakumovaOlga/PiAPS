@@ -45,5 +45,17 @@ namespace myPiAPS
             var form = Container.Resolve<newType>();
             form.Show();
         }
+
+        private void F_CrStock_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<newStock>();
+            form.Show();
+        }
+
+        private void F_CrSH_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<newShopHall>();
+            form.Show();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using myPiAPS_Model;
+using myPiAPS_Service.BindingModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,18 @@ namespace myPiAPS_Service.Interfaces
     public interface IRevalService
     {
         //Переоценка 5
-        void CreateReval(Waybill model);
+        void CreateReval(WaybillBM model, double nPrice);
 
-        void CreateRevalGroup(Waybill model);
+        void CreateRevalGroup(WaybillBM model);
 
-        void UpdReval(Waybill model);
+        void UpdReval(WaybillBM model);
 
-        void DelReval(Waybill model);
+        void DelReval(WaybillBM model);
 
-        List<Waybill> GetList();
+        List<WaybillBM> GetList();
 
-        Waybill GetElement(int id);
+        WaybillBM GetElement(int id);
+
+        double CalcSum(WaybillBM model, double nPrice);
     }
 }

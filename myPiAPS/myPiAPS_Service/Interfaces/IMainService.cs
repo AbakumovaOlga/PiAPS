@@ -1,4 +1,5 @@
 ﻿using myPiAPS_Model;
+using myPiAPS_Service.BindingModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,14 @@ namespace myPiAPS_Service.Interfaces
 {
     public interface IMainService
     {
-        Product FindProd(int idProd);
+        List<ProductBM> FindProd(string number);
 
-        List<Product> Sort(int idGroup);
+        List<ProductBM> Sort(int idGroup);
 
         void Archive();
 
         User Author(string login, string password);
+
+        List<ProductBM> Less();
     }
 }

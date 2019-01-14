@@ -1,4 +1,5 @@
 ﻿using myPiAPS_Model;
+using myPiAPS_Service.BindingModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +11,14 @@ namespace myPiAPS_Service.Interfaces
     public interface IRecieptService
     {
         //Получить 2
-        void CreateReciept(Waybill model);
+        void CreateReciept(WaybillBM model);
 
-        void UpdReciept(Waybill model);
+        void UpdReciept(WaybillBM model);
 
-        void DelReciept(Waybill model);
+        void DelReciept(WaybillBM model);
 
-        List<Waybill> GetList();
+        List<WaybillBM> GetList();
 
-        Waybill GetElement(int id);
+        WaybillBM GetElement(int id);
     }
 }
