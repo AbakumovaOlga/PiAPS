@@ -15,5 +15,11 @@ namespace myPiAPS_Service.Interfaces
 
         List<WaybillBM> GetListDeliv();
         List<WaybillBM> GetListToday();
+
+        List<WaybillBM> GetList();
+        List<WaybillBM> FindWaybill(int idWaybill);
+        List<WaybillBM> Sort(int idType);
+
+        bool PrintWaybill(string path,int idWaybill);
     }
 }

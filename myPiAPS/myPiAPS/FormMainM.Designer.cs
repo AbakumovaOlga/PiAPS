@@ -109,6 +109,7 @@
             this.Controls.Add(this.F_CrUser);
             this.Name = "FormMainM";
             this.Text = "FormMainM";
+            this.Load += new System.EventHandler(this.FormMainM_Load);
             this.ResumeLayout(false);
 
         }

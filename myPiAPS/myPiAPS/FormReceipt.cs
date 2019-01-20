@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unity;
@@ -38,66 +39,112 @@ namespace myPiAPS
 
         private void F_Save_Click(object sender, EventArgs e)
         {
-
-
-            /* if (string.IsNullOrEmpty(.Text))
-             {
-                 MessageBox.Show("Заполните название", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 return;
-             }
-             if (string.IsNullOrEmpty(FCakePrice.Text))
-             {
-                 MessageBox.Show("Заполните цену", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 return;
-             }
-             if (CakeIngredients == null || CakeIngredients.Count == 0)
-             {
-                 MessageBox.Show("Заполните компоненты", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 return;
-             }*/
-            try
+            if (CheckForm())
             {
-                List<ProductWaybillBM> ProductWaybillBM = new List<ProductWaybillBM>();
-                for (int i = 0; i < ProductWaybills.Count; ++i)
+
+                /* if (string.IsNullOrEmpty(.Text))
+                 {
+                     MessageBox.Show("Заполните название", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     return;
+                 }
+                 if (string.IsNullOrEmpty(FCakePrice.Text))
+                 {
+                     MessageBox.Show("Заполните цену", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     return;
+                 }
+                 if (CakeIngredients == null || CakeIngredients.Count == 0)
+                 {
+                     MessageBox.Show("Заполните компоненты", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     return;
+                 }*/
+                try
                 {
-                    ProductWaybillBM.Add(new ProductWaybillBM
+                    List<ProductWaybillBM> ProductWaybillBM = new List<ProductWaybillBM>();
+                    for (int i = 0; i < ProductWaybills.Count; ++i)
                     {
-                        Id = ProductWaybills[i].Id,
-                        ProductId = ProductWaybills[i].ProductId,
-                        WaybillId = ProductWaybills[i].WaybillId,
-                        Count = ProductWaybills[i].Count
+                        ProductWaybillBM.Add(new ProductWaybillBM
+                        {
+                            Id = ProductWaybills[i].Id,
+                            ProductId = ProductWaybills[i].ProductId,
+                            WaybillId = ProductWaybills[i].WaybillId,
+                            Count = ProductWaybills[i].Count
+                        });
+                    }
+                    /*if (id.HasValue)
+                    {
+                        service.UpdElement(new CakeBindingModel
+                        {
+                            Id = id.Value,
+                            CakeName = FCakeName.Text,
+                            Price = Convert.ToInt32(FCakePrice.Text),
+                            CakeIngredients = CakeIngredientBM
+                        });
+                    }
+                    else
+                    {*/
+                    int k = Convert.ToInt32(F_Stock.SelectedValue);
+                    _serviceR.CreateReciept(new WaybillBM
+                    {
+                        ///////////////
+                        Date = F_Date.Value,
+                        Summa = Convert.ToDouble(F_Summa.Text.Replace(",", ".")),
+                        StockId = Convert.ToInt32(F_Stock.SelectedValue),
+                        ProductWaybills = ProductWaybillBM
                     });
+                    //  }
+                    MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult = DialogResult.OK;
+                    Close();
                 }
-                /*if (id.HasValue)
+                catch (Exception ex)
                 {
-                    service.UpdElement(new CakeBindingModel
-                    {
-                        Id = id.Value,
-                        CakeName = FCakeName.Text,
-                        Price = Convert.ToInt32(FCakePrice.Text),
-                        CakeIngredients = CakeIngredientBM
-                    });
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private bool CheckForm()
+        {
+            //sum
+            string summa;
+            string s = F_Summa.Text;
+            s = s.Replace(",", ".");
+            int k = s.IndexOf(".");
+            Regex regexSumma = new Regex(@"^[0-9]{0,10}(?:[.,][0-9]{0,2})?\z");
+            if (F_Summa.Text == "")
+            {
+                MessageBox.Show("Заполните обязательные поля");
+                return false;
+            }
+            else if (s.IndexOf(".") != -1)
+            {
+                if (s.Substring(0, s.LastIndexOf('.')).Length > 11)
+                {
+                    MessageBox.Show("Слишком длинное число. Не более 11 символов");
+                    return false;
                 }
                 else
-                {*/
-                int k = Convert.ToInt32(F_Stock.SelectedValue);
-                _serviceR.CreateReciept(new WaybillBM
                 {
-                    ///////////////
-                    Date = F_Date.Value,
-                    Summa = Convert.ToDouble(F_Summa.Text),
-                    StockId=Convert.ToInt32(F_Stock.SelectedValue),
-                    ProductWaybills = ProductWaybillBM
-                });
-                //  }
-                MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                DialogResult = DialogResult.OK;
-                Close();
+                    if (regexSumma.IsMatch(F_Summa.Text))
+                    {
+                        summa = F_Summa.Text.Replace(",", ".");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Несоответсвие формату Сумма");
+                        return false;
+                    }
+                }
             }
-            catch (Exception ex)
+
+            if (F_Stock.SelectedValue == null)
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Выберите Склад");
+                return false;
             }
+           
+
+            return true;
         }
 
         private void LoadData()
@@ -179,7 +226,7 @@ namespace myPiAPS
 
         private void F_Add_Click(object sender, EventArgs e)
         {
-            F_NewGroup.Text = "";
+          //  F_NewGroup.Text = "";
         }
 
         private void F_AddProd_Click(object sender, EventArgs e)

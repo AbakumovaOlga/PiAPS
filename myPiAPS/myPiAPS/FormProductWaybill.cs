@@ -61,6 +61,21 @@ namespace myPiAPS
                 MessageBox.Show("Заполните поле Количество", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            try
+            {
+                Convert.ToInt32(F_Count.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Кол-во должно быть целым числом", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (F_Count.Text.Length > 10)
+            {
+                MessageBox.Show("Слишком большое число", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
             if (F_Product.SelectedValue == null)
             {
                 MessageBox.Show("Выберите компонент", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -82,6 +82,7 @@ namespace myPiAPS
                 if (user.Role == "кладовщик")
                 {
                     var form = Container.Resolve<FormMainK>();
+                    form.userId = user.Id;
                     form.Show();
                 }
                 else
@@ -90,6 +91,7 @@ namespace myPiAPS
                     {
                         var form = Container.Resolve<FormMainM>();
                         form.Show();
+                        form.userId = user.Id;
                     }
                 }
                 //this.Hide();

@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.F_Delivs = new System.Windows.Forms.DataGridView();
-            this.F_Sales = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.F_Summa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.F_OK = new System.Windows.Forms.Button();
+            this.F_Number = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.F_Delivs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,47 +44,39 @@
             this.F_Delivs.Size = new System.Drawing.Size(776, 375);
             this.F_Delivs.TabIndex = 0;
             // 
-            // F_Sales
-            // 
-            this.F_Sales.FormattingEnabled = true;
-            this.F_Sales.Location = new System.Drawing.Point(119, 15);
-            this.F_Sales.Name = "F_Sales";
-            this.F_Sales.Size = new System.Drawing.Size(270, 28);
-            this.F_Sales.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(504, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Total";
-            // 
-            // F_Summa
-            // 
-            this.F_Summa.Location = new System.Drawing.Point(554, 12);
-            this.F_Summa.Name = "F_Summa";
-            this.F_Summa.Size = new System.Drawing.Size(234, 26);
-            this.F_Summa.TabIndex = 3;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(8, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 20);
+            this.label1.Size = new System.Drawing.Size(146, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Sales invoice";
+            this.label1.Text = "Номер накладной";
+            // 
+            // F_OK
+            // 
+            this.F_OK.Location = new System.Drawing.Point(548, 16);
+            this.F_OK.Name = "F_OK";
+            this.F_OK.Size = new System.Drawing.Size(90, 35);
+            this.F_OK.TabIndex = 2;
+            this.F_OK.Text = "OK";
+            this.F_OK.UseVisualStyleBackColor = true;
+            this.F_OK.Click += new System.EventHandler(this.F_OK_Click);
+            // 
+            // F_Number
+            // 
+            this.F_Number.Location = new System.Drawing.Point(155, 20);
+            this.F_Number.Name = "F_Number";
+            this.F_Number.Size = new System.Drawing.Size(360, 26);
+            this.F_Number.TabIndex = 3;
             // 
             // FormSumDeliv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.F_Summa);
-            this.Controls.Add(this.F_Sales);
+            this.Controls.Add(this.F_Number);
+            this.Controls.Add(this.F_OK);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.F_Delivs);
             this.Name = "FormSumDeliv";
@@ -100,9 +91,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView F_Delivs;
-        private System.Windows.Forms.ComboBox F_Sales;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox F_Summa;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button F_OK;
+        private System.Windows.Forms.TextBox F_Number;
     }
 }

@@ -48,5 +48,35 @@ namespace myPiAPS
             }
 
         }
+
+        private void F_OK_Click(object sender, EventArgs e)
+        {
+            if (F_Number.Text == "")
+            {
+                return;
+            }
+            try
+            {
+                Convert.ToInt32(F_Number.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Указан неверный номер", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            try
+            {
+                List<WaybillBM> list = _serviceW.FindWaybill(Convert.ToInt32(F_Number.Text));
+                if (list != null)
+                {
+                    F_Delivs.DataSource = list;
+                    F_Delivs.Columns[0].Visible = false;
+                    //  F_GoodsList.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

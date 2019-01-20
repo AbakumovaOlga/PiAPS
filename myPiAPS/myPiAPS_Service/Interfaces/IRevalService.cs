@@ -13,7 +13,7 @@ namespace myPiAPS_Service.Interfaces
         //Переоценка 5
         void CreateReval(WaybillBM model, double nPrice);
 
-        void CreateRevalGroup(WaybillBM model);
+        void CreateRevalGroup(WaybillBM model, double koeff);
 
         void UpdReval(WaybillBM model);
 
@@ -24,5 +24,9 @@ namespace myPiAPS_Service.Interfaces
         WaybillBM GetElement(int id);
 
         double CalcSum(WaybillBM model, double nPrice);
+
+        double CalcSumGroup(WaybillBM model, double koeff);
+
+        int CalcCount(int idProd);
     }
 }

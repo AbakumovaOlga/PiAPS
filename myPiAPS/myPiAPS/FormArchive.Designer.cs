@@ -48,6 +48,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormArchive";
             this.Text = "FormArchive";
+            this.Load += new System.EventHandler(this.FormArchive_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -45,6 +45,11 @@ namespace myPiAPS
             currentContainer.RegisterType<ITypeOfWaybillService, TypeServiceBD>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<IStockService, StockServiceBD>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<IShopHallService, ShopHallServiceBD>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<ISerializeMYService, SerializeService>(new HierarchicalLifetimeManager());
+
+            currentContainer
+       .RegisterType<FormStart>()
+       .RegisterInstance<IUnityContainer>(currentContainer);
 
             return currentContainer;
         }

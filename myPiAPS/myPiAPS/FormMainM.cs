@@ -17,6 +17,9 @@ namespace myPiAPS
         [Dependency]
         public new IUnityContainer Container { get; set; }
 
+
+        public int userId { get; set; }
+
         public FormMainM()
         {
             InitializeComponent();
@@ -56,6 +59,11 @@ namespace myPiAPS
         {
             var form = Container.Resolve<newShopHall>();
             form.Show();
+        }
+
+        private void FormMainM_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

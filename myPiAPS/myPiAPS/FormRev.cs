@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unity;
@@ -35,40 +36,121 @@ namespace myPiAPS
 
         private void F_Rev_Click(object sender, EventArgs e)
         {
-            ProductWaybills = new List<ProductWaybillBM>();
-            ProductWaybillBM model = new ProductWaybillBM
+            if (CheckForm())
             {
-                ProductId = Convert.ToInt32(F_Name.SelectedValue)
-            };
-            ProductWaybills.Add(model);
-            List<ProductWaybillBM> ProductWaybillBM = new List<ProductWaybillBM>();
-            for (int i = 0; i < ProductWaybills.Count; ++i)
-            {
-                ProductWaybillBM.Add(new ProductWaybillBM
+                ProductWaybills = new List<ProductWaybillBM>();
+                ProductWaybillBM model = new ProductWaybillBM
                 {
-                    Id = ProductWaybills[i].Id,
-                    ProductId = ProductWaybills[i].ProductId,
-                    WaybillId = ProductWaybills[i].WaybillId,
-                    Count = ProductWaybills[i].Count
-                });
-            }
-            try
-            {
-                _serviceRev.CreateReval(new WaybillBM
-                {
-                    Date = F_Date.Value,
-                    Summa = Convert.ToInt32(F_Summa.Text),
-                    ProductWaybills = ProductWaybillBM
-                }, Convert.ToDouble(F_Price.Text));
+                    ProductId = Convert.ToInt32(F_Name.SelectedValue),
+                    Count = _serviceRev.CalcCount(Convert.ToInt32(F_Name.SelectedValue))
 
-                MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                DialogResult = DialogResult.OK;
-                Close();
+                };
+                ProductWaybills.Add(model);
+                List<ProductWaybillBM> ProductWaybillBM = new List<ProductWaybillBM>();
+                for (int i = 0; i < ProductWaybills.Count; ++i)
+                {
+                    ProductWaybillBM.Add(new ProductWaybillBM
+                    {
+                        Id = ProductWaybills[i].Id,
+                        ProductId = ProductWaybills[i].ProductId,
+                        WaybillId = ProductWaybills[i].WaybillId,
+                        Count = ProductWaybills[i].Count
+                    });
+                }
+                try
+                {
+                    _serviceRev.CreateReval(new WaybillBM
+                    {
+                        Date = F_Date.Value,
+                        Summa = Convert.ToInt32(F_Summa.Text),
+                        ProductWaybills = ProductWaybillBM
+                    }, Convert.ToDouble(F_Price.Text.Replace(",", ".")));
+
+                    MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
+        }
+
+        private bool CheckForm()
+        {
+            //sum
+            string summa;
+            string s = F_Summa.Text;
+            s = s.Replace(",", ".");
+            int k = s.IndexOf(".");
+            Regex regexSumma = new Regex(@"^[0-9]{0,10}(?:[.,][0-9]{0,2})?\z");
+            if (F_Summa.Text == "")
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Заполните обязательные поля");
+                return false;
             }
+            else if (s.IndexOf(".") != -1)
+            {
+                if (s.Substring(0, s.LastIndexOf('.')).Length > 11)
+                {
+                    MessageBox.Show("Слишком длинное число. Не более 11 символов");
+                    return false;
+                }
+                else
+                {
+                    if (regexSumma.IsMatch(F_Summa.Text))
+                    {
+                        summa = F_Summa.Text.Replace(",", ".");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Несоответсвие формату Сумма");
+                        return false;
+                    }
+                }
+            }
+
+            if (F_Name.SelectedValue == null)
+                {
+                    MessageBox.Show("Выберите Товар");
+                    return false;
+                }
+            //sum
+            string price;
+            string p = F_Price.Text;
+            p = p.Replace(",", ".");
+            int kp = p.IndexOf(".");
+            Regex regexPrice = new Regex(@"^[0-9]{0,10}(?:[.,][0-9]{0,2})?\z");
+            if (F_Price.Text == "")
+            {
+                MessageBox.Show("Заполните обязательные поля");
+                return false;
+            }
+            else if (p.IndexOf(".") != -1)
+            {
+                if (p.Substring(0, p.LastIndexOf('.')).Length > 11)
+                {
+                    MessageBox.Show("Слишком длинное число. Не более 11 символов");
+                    return false;
+                }
+                else
+                {
+                    if (regexPrice.IsMatch(F_Price.Text))
+                    {
+                        price = F_Price.Text.Replace(",", ".");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Несоответсвие формату Цена");
+                        return false;
+                    }
+                }
+            }
+
+
+            return true;
+            
         }
 
         private void F_Cancel_Click(object sender, EventArgs e)
@@ -78,7 +160,7 @@ namespace myPiAPS
 
         private void F_RevGroup_Click(object sender, EventArgs e)
         {
-            var form = new FormRevGroup();
+            var form = Container.Resolve<FormRevGroup>();
             form.Show();
         }
 
@@ -104,31 +186,34 @@ namespace myPiAPS
 
         private void F_Calc_Click(object sender, EventArgs e)
         {
-            ProductWaybills = new List<ProductWaybillBM>();
-            ProductWaybillBM model = new ProductWaybillBM
+            if (CheckForm())
             {
-                ProductId = Convert.ToInt32(F_Name.SelectedValue)
-            };
-            ProductWaybills.Add(model);
-
-
-            List<ProductWaybillBM> ProductWaybillBM = new List<ProductWaybillBM>();
-            for (int i = 0; i < ProductWaybills.Count; ++i)
-            {
-                ProductWaybillBM.Add(new ProductWaybillBM
+                ProductWaybills = new List<ProductWaybillBM>();
+                ProductWaybillBM model = new ProductWaybillBM
                 {
-                    Id = ProductWaybills[i].Id,
-                    ProductId = ProductWaybills[i].ProductId,
-                    WaybillId = ProductWaybills[i].WaybillId,
-                    Count = ProductWaybills[i].Count
-                });
-            }
+                    ProductId = Convert.ToInt32(F_Name.SelectedValue)
+                };
+                ProductWaybills.Add(model);
 
-            F_Summa.Text = _serviceRev.CalcSum(new WaybillBM
-            {
-                Date = F_Date.Value,
-                ProductWaybills = ProductWaybillBM
-            }, Convert.ToDouble(F_Price.Text)) + "";
+
+                List<ProductWaybillBM> ProductWaybillBM = new List<ProductWaybillBM>();
+                for (int i = 0; i < ProductWaybills.Count; ++i)
+                {
+                    ProductWaybillBM.Add(new ProductWaybillBM
+                    {
+                        Id = ProductWaybills[i].Id,
+                        ProductId = ProductWaybills[i].ProductId,
+                        WaybillId = ProductWaybills[i].WaybillId,
+                        Count = ProductWaybills[i].Count
+                    });
+                }
+
+                F_Summa.Text = _serviceRev.CalcSum(new WaybillBM
+                {
+                    Date = F_Date.Value,
+                    ProductWaybills = ProductWaybillBM
+                }, Convert.ToDouble(F_Price.Text.Replace(",", "."))) + "";
+            }
         }
     }
 }

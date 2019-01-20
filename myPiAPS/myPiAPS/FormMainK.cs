@@ -1,10 +1,12 @@
-﻿using myPiAPS_Service.BindingModels;
+﻿using myPiAPS_Service;
+using myPiAPS_Service.BindingModels;
 using myPiAPS_Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,13 +24,21 @@ namespace myPiAPS
         private readonly IProductService _serviceP;
         private readonly IProdGroupService _servicePG;
         private readonly IMainService _serviceM;
+        private readonly ISerializeMYService _serviceS;
 
+        public int userId { get; set; }
+        private Logger logger;
+        private int termArchive = 2;
+        private DateTime now = DateTime.Now.Date;
 
-        public FormMainK(IProductService serviceP, IProdGroupService servicePG, IMainService serviceM)
+        public FormMainK(IProductService serviceP, IProdGroupService servicePG, IMainService serviceM, ISerializeMYService serviceS)
         {
             _serviceP = serviceP;
             _servicePG = servicePG;
             _serviceM = serviceM;
+            _serviceS = serviceS;
+
+            logger = new Logger();
             InitializeComponent();
         }
 
@@ -64,12 +74,35 @@ namespace myPiAPS
 
         private void F_Archive_Click(object sender, EventArgs e)
         {
-            var form = Container.Resolve<FormArchive>();
-            form.Show();
+            /*  var form = Container.Resolve<FormArchive>();
+              form.userId = userId;
+              form.Show();*/
+            if (MessageBox.Show("Сделать резервную копию?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                SaveFileDialog sfd = new SaveFileDialog { Filter = "Json files (*.json)|*.json|Word files (*.doc)|*.doc" };
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        StreamWriter writer = new StreamWriter(sfd.FileName);
+                        writer.WriteLine(_serviceS.GetDataFromStookKeeper(now.AddDays(-termArchive)));
+                        writer.Dispose();
+
+                        logger.Log("Архивирование данных кладовщиком id=" + userId + ". Файл: " + Path.GetFileName(sfd.FileName));
+
+                        MessageBox.Show("Данные сохранены успешно", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void F_Find_Click(object sender, EventArgs e)
         {
+            if (F_Number.Text == "") return;
             try
             {
                 List<ProductBM> list = _serviceM.FindProd(F_Number.Text);
@@ -119,7 +152,7 @@ namespace myPiAPS
                 {
                     F_GoodsList.DataSource = list;
                     F_GoodsList.Columns[0].Visible = false;
-                  //  F_GoodsList.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    //  F_GoodsList.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
             }
             catch (Exception ex)
@@ -167,6 +200,7 @@ namespace myPiAPS
 
         private void F_GropFind_Click(object sender, EventArgs e)
         {
+            if (F_ChooseGrop.SelectedValue == null) return;
             try
             {
                 List<ProductBM> list = _serviceM.Sort(Convert.ToInt32(F_ChooseGrop.SelectedValue));
