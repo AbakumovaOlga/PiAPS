@@ -47,6 +47,7 @@
             // 
             this.F_Summa.Location = new System.Drawing.Point(620, 412);
             this.F_Summa.Name = "F_Summa";
+            this.F_Summa.ReadOnly = true;
             this.F_Summa.Size = new System.Drawing.Size(168, 26);
             this.F_Summa.TabIndex = 1;
             // 

@@ -30,16 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.F_Save = new System.Windows.Forms.Button();
-            this.F_Cancel = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.F_Summa = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.F_Stock = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.F_Products = new System.Windows.Forms.DataGridView();
-            this.FCakeRel = new System.Windows.Forms.Button();
             this.FCakeDel = new System.Windows.Forms.Button();
-            this.FCakeUpd = new System.Windows.Forms.Button();
             this.F_AddProd = new System.Windows.Forms.Button();
             this.F_Date = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
@@ -66,20 +63,10 @@
             this.F_Save.UseVisualStyleBackColor = true;
             this.F_Save.Click += new System.EventHandler(this.F_Save_Click);
             // 
-            // F_Cancel
-            // 
-            this.F_Cancel.Location = new System.Drawing.Point(537, 367);
-            this.F_Cancel.Name = "F_Cancel";
-            this.F_Cancel.Size = new System.Drawing.Size(107, 52);
-            this.F_Cancel.TabIndex = 2;
-            this.F_Cancel.Text = "Cancel";
-            this.F_Cancel.UseVisualStyleBackColor = true;
-            this.F_Cancel.Click += new System.EventHandler(this.F_Cancel_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(122, 292);
+            this.label5.Location = new System.Drawing.Point(108, 140);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 20);
             this.label5.TabIndex = 9;
@@ -87,7 +74,7 @@
             // 
             // F_Summa
             // 
-            this.F_Summa.Location = new System.Drawing.Point(204, 286);
+            this.F_Summa.Location = new System.Drawing.Point(204, 143);
             this.F_Summa.Name = "F_Summa";
             this.F_Summa.Size = new System.Drawing.Size(305, 26);
             this.F_Summa.TabIndex = 10;
@@ -95,7 +82,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(122, 333);
+            this.label8.Location = new System.Drawing.Point(108, 184);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 20);
             this.label8.TabIndex = 33;
@@ -104,7 +91,7 @@
             // F_Stock
             // 
             this.F_Stock.FormattingEnabled = true;
-            this.F_Stock.Location = new System.Drawing.Point(204, 325);
+            this.F_Stock.Location = new System.Drawing.Point(204, 181);
             this.F_Stock.Name = "F_Stock";
             this.F_Stock.Size = new System.Drawing.Size(305, 28);
             this.F_Stock.TabIndex = 34;
@@ -112,9 +99,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.F_Products);
-            this.groupBox1.Controls.Add(this.FCakeRel);
             this.groupBox1.Controls.Add(this.FCakeDel);
-            this.groupBox1.Controls.Add(this.FCakeUpd);
             this.groupBox1.Controls.Add(this.F_AddProd);
             this.groupBox1.Location = new System.Drawing.Point(786, 18);
             this.groupBox1.Name = "groupBox1";
@@ -132,15 +117,6 @@
             this.F_Products.Size = new System.Drawing.Size(527, 342);
             this.F_Products.TabIndex = 8;
             // 
-            // FCakeRel
-            // 
-            this.FCakeRel.Location = new System.Drawing.Point(570, 157);
-            this.FCakeRel.Name = "FCakeRel";
-            this.FCakeRel.Size = new System.Drawing.Size(90, 38);
-            this.FCakeRel.TabIndex = 7;
-            this.FCakeRel.Text = "Reload";
-            this.FCakeRel.UseVisualStyleBackColor = true;
-            // 
             // FCakeDel
             // 
             this.FCakeDel.Location = new System.Drawing.Point(570, 113);
@@ -149,15 +125,7 @@
             this.FCakeDel.TabIndex = 6;
             this.FCakeDel.Text = "Delete";
             this.FCakeDel.UseVisualStyleBackColor = true;
-            // 
-            // FCakeUpd
-            // 
-            this.FCakeUpd.Location = new System.Drawing.Point(570, 69);
-            this.FCakeUpd.Name = "FCakeUpd";
-            this.FCakeUpd.Size = new System.Drawing.Size(90, 38);
-            this.FCakeUpd.TabIndex = 5;
-            this.FCakeUpd.Text = "Update";
-            this.FCakeUpd.UseVisualStyleBackColor = true;
+            this.FCakeDel.Click += new System.EventHandler(this.FCakeDel_Click);
             // 
             // F_AddProd
             // 
@@ -197,7 +165,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.F_Summa);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.F_Cancel);
             this.Controls.Add(this.F_Save);
             this.Controls.Add(this.label1);
             this.Name = "FormReceipt";
@@ -214,16 +181,13 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button F_Save;
-        private System.Windows.Forms.Button F_Cancel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox F_Summa;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox F_Stock;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView F_Products;
-        private System.Windows.Forms.Button FCakeRel;
         private System.Windows.Forms.Button FCakeDel;
-        private System.Windows.Forms.Button FCakeUpd;
         private System.Windows.Forms.Button F_AddProd;
         private System.Windows.Forms.DateTimePicker F_Date;
         private System.Windows.Forms.Label label9;

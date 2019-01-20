@@ -82,75 +82,81 @@ namespace myPiAPS
             //sum
             string summa;
             string s = F_Summa.Text;
-            s = s.Replace(",", ".");
-            int k = s.IndexOf(".");
+            s = s.Replace(".", ",");
+            int k = s.IndexOf(",");
             Regex regexSumma = new Regex(@"^[0-9]{0,10}(?:[.,][0-9]{0,2})?\z");
             if (F_Summa.Text == "")
             {
                 MessageBox.Show("Заполните обязательные поля");
                 return false;
             }
-            else if (s.IndexOf(".") != -1)
+            if (F_Summa.Text.Length > 11)
             {
-                if (s.Substring(0, s.LastIndexOf('.')).Length > 11)
+                MessageBox.Show("Слишком длинное число. Не более 11 символов");
+                return false;
+            }
+            else if (s.IndexOf(",") != -1)
+            {
+                if (s.Substring(0, s.LastIndexOf(',')).Length > 8)
                 {
-                    MessageBox.Show("Слишком длинное число. Не более 11 символов");
+                    MessageBox.Show("Слишком длинное число. Не более 8 знаков до запятой");
                     return false;
-                }
-                else
-                {
-                    if (regexSumma.IsMatch(F_Summa.Text))
-                    {
-                        summa = F_Summa.Text.Replace(",", ".");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Несоответсвие формату Сумма");
-                        return false;
-                    }
                 }
             }
+            if (regexSumma.IsMatch(F_Summa.Text))
+            {
+                summa = F_Summa.Text.Replace(".", ",");
+            }
+            else
+            {
+                MessageBox.Show("Несоответсвие формату Сумма");
+                return false;
+            }
+
+            
 
             if (F_Name.SelectedValue == null)
-                {
-                    MessageBox.Show("Выберите Товар");
-                    return false;
-                }
+            {
+                MessageBox.Show("Выберите Товар");
+                return false;
+            }
             //sum
             string price;
             string p = F_Price.Text;
-            p = p.Replace(",", ".");
-            int kp = p.IndexOf(".");
+            p = p.Replace(".", ",");
+            int kp = p.IndexOf(",");
             Regex regexPrice = new Regex(@"^[0-9]{0,10}(?:[.,][0-9]{0,2})?\z");
             if (F_Price.Text == "")
             {
                 MessageBox.Show("Заполните обязательные поля");
                 return false;
             }
-            else if (p.IndexOf(".") != -1)
+            if (F_Price.Text.Length>11)
             {
-                if (p.Substring(0, p.LastIndexOf('.')).Length > 11)
+                MessageBox.Show("Слишком длинное число. Не более 11 символов");
+                return false;
+            }
+            else if (p.IndexOf(",") != -1)
+            {
+                if (p.Substring(0, p.LastIndexOf(',')).Length > 11)
                 {
                     MessageBox.Show("Слишком длинное число. Не более 11 символов");
                     return false;
                 }
-                else
-                {
-                    if (regexPrice.IsMatch(F_Price.Text))
-                    {
-                        price = F_Price.Text.Replace(",", ".");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Несоответсвие формату Цена");
-                        return false;
-                    }
-                }
+            }
+            if (regexPrice.IsMatch(F_Price.Text))
+            {
+                price = F_Price.Text.Replace(".", ",");
+            }
+            else
+            {
+                MessageBox.Show("Несоответсвие формату Цена");
+                return false;
             }
 
 
             return true;
-            
+
         }
 
         private void F_Cancel_Click(object sender, EventArgs e)
@@ -186,7 +192,7 @@ namespace myPiAPS
 
         private void F_Calc_Click(object sender, EventArgs e)
         {
-            if (CheckForm())
+            if (CheckFormR())
             {
                 ProductWaybills = new List<ProductWaybillBM>();
                 ProductWaybillBM model = new ProductWaybillBM
@@ -206,14 +212,61 @@ namespace myPiAPS
                         WaybillId = ProductWaybills[i].WaybillId,
                         Count = ProductWaybills[i].Count
                     });
-                }
 
-                F_Summa.Text = _serviceRev.CalcSum(new WaybillBM
-                {
-                    Date = F_Date.Value,
-                    ProductWaybills = ProductWaybillBM
-                }, Convert.ToDouble(F_Price.Text.Replace(",", "."))) + "";
+                    F_Summa.Text = _serviceRev.CalcSum(new WaybillBM
+                    {
+                        Date = F_Date.Value,
+                        ProductWaybills = ProductWaybillBM
+                    }, Convert.ToDouble(F_Price.Text.Replace(".", ","))) + "";
+                }
             }
+        }
+
+        private bool CheckFormR()
+        {
+            if (F_Name.SelectedValue == null)
+            {
+                MessageBox.Show("Выберите Товар");
+                return false;
+            }
+            //sum
+            string price;
+            string p = F_Price.Text;
+            p = p.Replace(".", ",");
+            int kp = p.IndexOf(".");
+            Regex regexPrice = new Regex(@"^[0-9]{0,10}(?:[.,][0-9]{0,2})?\z");
+            if (F_Price.Text == "")
+            {
+                MessageBox.Show("Заполните обязательные поля");
+                return false;
+            }
+            if (F_Price.Text.Length > 11)
+            {
+                MessageBox.Show("Слишком длинное число. Не более 11 символов");
+                return false;
+            }
+
+            if (p.IndexOf(",") != -1)
+            {
+                if (p.Substring(0, p.LastIndexOf(',')).Length > 11)
+                {
+                    MessageBox.Show("Слишком длинное число. Не более 11 символов");
+                    return false;
+                }
+            }
+            if (regexPrice.IsMatch(F_Price.Text))
+            {
+                price = F_Price.Text.Replace(".", ",");
+            }
+            else
+            {
+                MessageBox.Show("Несоответсвие формату Цена");
+                return false;
+
+            }
+
+
+            return true;
         }
     }
 }

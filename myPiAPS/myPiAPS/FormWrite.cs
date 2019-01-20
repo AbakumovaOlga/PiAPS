@@ -59,6 +59,11 @@ namespace myPiAPS
                             Count = ProductWaybills[i].Count
                         });
                     }
+                    if (ProductWaybillBM.Count == 0)
+                    {
+                        MessageBox.Show("Список продуктов пуст", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     /*if (id.HasValue)
                     {
                         service.UpdElement(new CakeBindingModel
@@ -76,7 +81,7 @@ namespace myPiAPS
                     {
                         ///////////////
                         Date = F_Date.Value,
-                        Summa = Convert.ToDouble(F_Summa.Text.Replace(",", ".")),
+                        Summa = Convert.ToDouble(F_Summa.Text.Replace(".", ",")),
                         StockId = Convert.ToInt32(F_Stock.SelectedValue),
                         Customer = F_Customer.Text,
                         ProductWaybills = ProductWaybillBM
@@ -98,33 +103,35 @@ namespace myPiAPS
             //sum
             string summa;
             string s = F_Summa.Text;
-            s = s.Replace(",", ".");
-            int k = s.IndexOf(".");
+            s = s.Replace(".", ",");
+            int kk = s.IndexOf(",");
             Regex regexSumma = new Regex(@"^[0-9]{0,10}(?:[.,][0-9]{0,2})?\z");
             if (F_Summa.Text == "")
             {
                 MessageBox.Show("Заполните обязательные поля");
                 return false;
             }
-            else if (s.IndexOf(".") != -1)
+            if (F_Summa.Text.Length > 11)
             {
-                if (s.Substring(0, s.LastIndexOf('.')).Length > 11)
+                MessageBox.Show("Слишком длинное число. Не более 11 символов");
+                return false;
+            }
+            else if (s.IndexOf(",") != -1)
+            {
+                if (s.Substring(0, s.LastIndexOf(',')).Length > 8)
                 {
-                    MessageBox.Show("Слишком длинное число. Не более 11 символов");
+                    MessageBox.Show("Слишком длинное число. Не более 8 знаков до запятой");
                     return false;
                 }
-                else
-                {
-                    if (regexSumma.IsMatch(F_Summa.Text))
-                    {
-                        summa = F_Summa.Text.Replace(",", ".");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Несоответсвие формату Сумма");
-                        return false;
-                    }
-                }
+            }
+            if (regexSumma.IsMatch(F_Summa.Text))
+            {
+                summa = F_Summa.Text.Replace(".", ",");
+            }
+            else
+            {
+                MessageBox.Show("Несоответсвие формату Сумма");
+                return false;
             }
 
             if (F_Customer.Text == "")
@@ -256,6 +263,25 @@ namespace myPiAPS
                     ProductWaybills.Add(form.model);
                 }
                 LoadData();
+            }
+        }
+
+        private void FCakeDel_Click(object sender, EventArgs e)
+        {
+            if (F_Products.SelectedRows.Count == 1)
+            {
+                if (MessageBox.Show("Удалить запись", "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        ProductWaybills.RemoveAt(F_Products.SelectedRows[0].Cells[0].RowIndex);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    LoadData();
+                }
             }
         }
     }

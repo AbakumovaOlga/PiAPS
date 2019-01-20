@@ -13,8 +13,7 @@ namespace myPiAPS_Service
         private static FileStream f1;
         private StreamWriter output;
         
-        string path2 = @"‪c:\! ВУЗ\ПиАПС\myPiAPS\log.txt";
-        string path = @"C:\Users\админ\Desktop\logg.txt";
+        string path = @"C:\Users\админ\Desktop\пиапс\logg.txt";
 
         public Logger()
         {

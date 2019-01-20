@@ -70,6 +70,7 @@
       <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -242,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDelivary.resx">
       <DependentUpon>FormDelivary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDiagram.resx">
+      <DependentUpon>FormDiagram.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLess.resx">
       <DependentUpon>FormLess.cs</DependentUpon>

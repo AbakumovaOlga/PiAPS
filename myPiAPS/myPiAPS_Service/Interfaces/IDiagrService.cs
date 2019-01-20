@@ -9,6 +9,8 @@ namespace myPiAPS_Service.Interfaces
     public interface IDiagrService
     {
         void MakeDiagr();
+
+        double CountProdGrop(int idGroup);
         void SaveDiagr();
 
     }

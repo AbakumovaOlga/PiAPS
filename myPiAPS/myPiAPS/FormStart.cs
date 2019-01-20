@@ -1,4 +1,5 @@
 ﻿using myPiAPS_Model;
+using myPiAPS_Service;
 using myPiAPS_Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,8 @@ namespace myPiAPS
         private readonly IMainService _serviceM;
         private readonly IUserService _serviceU;
         private User user;
+
+        Logger logger;
         private string login;
         private string password;
 
@@ -41,13 +44,13 @@ namespace myPiAPS
             try
             {
                 user = _serviceM.Author(login, password);
-               
+
 
                 var form = Container.Resolve<FormMainK>();
                 form.Show();
                 //this.Hide();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -83,6 +86,7 @@ namespace myPiAPS
                 {
                     var form = Container.Resolve<FormMainK>();
                     form.userId = user.Id;
+                    form.logger = logger;
                     form.Show();
                 }
                 else
@@ -100,6 +104,11 @@ namespace myPiAPS
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FormStart_Load(object sender, EventArgs e)
+        {
+            logger = new Logger();
         }
     }
 }

@@ -27,7 +27,7 @@ namespace myPiAPS
         private readonly ISerializeMYService _serviceS;
 
         public int userId { get; set; }
-        private Logger logger;
+        public Logger logger;
         private int termArchive = 2;
         private DateTime now = DateTime.Now.Date;
 
@@ -38,7 +38,6 @@ namespace myPiAPS
             _serviceM = serviceM;
             _serviceS = serviceS;
 
-            logger = new Logger();
             InitializeComponent();
         }
 

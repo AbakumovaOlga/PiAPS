@@ -33,15 +33,12 @@
             this.F_Date = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.F_Products = new System.Windows.Forms.DataGridView();
-            this.FCakeRel = new System.Windows.Forms.Button();
             this.FCakeDel = new System.Windows.Forms.Button();
-            this.FCakeUpd = new System.Windows.Forms.Button();
             this.F_AddProd = new System.Windows.Forms.Button();
             this.F_Stock = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.F_Summa = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.F_Save = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.F_Customer = new System.Windows.Forms.TextBox();
@@ -77,9 +74,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.F_Products);
-            this.groupBox1.Controls.Add(this.FCakeRel);
             this.groupBox1.Controls.Add(this.FCakeDel);
-            this.groupBox1.Controls.Add(this.FCakeUpd);
             this.groupBox1.Controls.Add(this.F_AddProd);
             this.groupBox1.Location = new System.Drawing.Point(786, 52);
             this.groupBox1.Name = "groupBox1";
@@ -97,15 +92,6 @@
             this.F_Products.Size = new System.Drawing.Size(527, 342);
             this.F_Products.TabIndex = 8;
             // 
-            // FCakeRel
-            // 
-            this.FCakeRel.Location = new System.Drawing.Point(570, 157);
-            this.FCakeRel.Name = "FCakeRel";
-            this.FCakeRel.Size = new System.Drawing.Size(90, 38);
-            this.FCakeRel.TabIndex = 7;
-            this.FCakeRel.Text = "Reload";
-            this.FCakeRel.UseVisualStyleBackColor = true;
-            // 
             // FCakeDel
             // 
             this.FCakeDel.Location = new System.Drawing.Point(570, 113);
@@ -114,15 +100,7 @@
             this.FCakeDel.TabIndex = 6;
             this.FCakeDel.Text = "Delete";
             this.FCakeDel.UseVisualStyleBackColor = true;
-            // 
-            // FCakeUpd
-            // 
-            this.FCakeUpd.Location = new System.Drawing.Point(570, 69);
-            this.FCakeUpd.Name = "FCakeUpd";
-            this.FCakeUpd.Size = new System.Drawing.Size(90, 38);
-            this.FCakeUpd.TabIndex = 5;
-            this.FCakeUpd.Text = "Update";
-            this.FCakeUpd.UseVisualStyleBackColor = true;
+            this.FCakeDel.Click += new System.EventHandler(this.FCakeDel_Click);
             // 
             // F_AddProd
             // 
@@ -137,7 +115,7 @@
             // F_Stock
             // 
             this.F_Stock.FormattingEnabled = true;
-            this.F_Stock.Location = new System.Drawing.Point(191, 175);
+            this.F_Stock.Location = new System.Drawing.Point(204, 175);
             this.F_Stock.Name = "F_Stock";
             this.F_Stock.Size = new System.Drawing.Size(305, 28);
             this.F_Stock.TabIndex = 49;
@@ -153,7 +131,7 @@
             // 
             // F_Summa
             // 
-            this.F_Summa.Location = new System.Drawing.Point(204, 320);
+            this.F_Summa.Location = new System.Drawing.Point(204, 265);
             this.F_Summa.Name = "F_Summa";
             this.F_Summa.Size = new System.Drawing.Size(305, 26);
             this.F_Summa.TabIndex = 47;
@@ -161,24 +139,15 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(122, 326);
+            this.label3.Location = new System.Drawing.Point(109, 265);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 20);
             this.label3.TabIndex = 46;
             this.label3.Text = "Summa";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(537, 401);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 52);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // F_Save
             // 
-            this.F_Save.Location = new System.Drawing.Point(219, 401);
+            this.F_Save.Location = new System.Drawing.Point(226, 335);
             this.F_Save.Name = "F_Save";
             this.F_Save.Size = new System.Drawing.Size(107, 52);
             this.F_Save.TabIndex = 44;
@@ -189,7 +158,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(109, 239);
+            this.label2.Location = new System.Drawing.Point(109, 224);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 53;
@@ -197,7 +166,7 @@
             // 
             // F_Customer
             // 
-            this.F_Customer.Location = new System.Drawing.Point(193, 236);
+            this.F_Customer.Location = new System.Drawing.Point(204, 221);
             this.F_Customer.Name = "F_Customer";
             this.F_Customer.Size = new System.Drawing.Size(305, 26);
             this.F_Customer.TabIndex = 54;
@@ -216,7 +185,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.F_Summa);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.F_Save);
             this.Controls.Add(this.label1);
             this.Name = "FormWrite";
@@ -235,15 +203,12 @@
         private System.Windows.Forms.DateTimePicker F_Date;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView F_Products;
-        private System.Windows.Forms.Button FCakeRel;
         private System.Windows.Forms.Button FCakeDel;
-        private System.Windows.Forms.Button FCakeUpd;
         private System.Windows.Forms.Button F_AddProd;
         private System.Windows.Forms.ComboBox F_Stock;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox F_Summa;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button F_Save;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox F_Customer;

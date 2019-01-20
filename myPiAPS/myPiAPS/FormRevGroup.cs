@@ -57,7 +57,11 @@ namespace myPiAPS
                     Count = _serviceRV.CalcCount(p.Id)
                 });
             }
-
+            if (ProductWaybills.Count == 0)
+            {
+                MessageBox.Show("Список продуктов пуст", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             List<ProductWaybillBM> ProductWaybillBM = new List<ProductWaybillBM>();
             for (int i = 0; i < ProductWaybills.Count; ++i)
             {
@@ -74,10 +78,10 @@ namespace myPiAPS
                 _serviceRV.CreateRevalGroup(new WaybillBM
                 {
                     Date = F_Date.Value,
-                    Summa = Convert.ToInt32(F_Summa.Text.Replace(",", ".")),
-                    Koef = Convert.ToDouble(F_Coeff.Text.Replace(",", ".")),
+                    Summa = Convert.ToInt32(F_Summa.Text.Replace(".", ",")),
+                    Koef = Convert.ToDouble(F_Coeff.Text.Replace(".", ",")),
                     ProductWaybills = ProductWaybillBM
-                }, Convert.ToDouble(F_Coeff.Text.Replace(",", ".")));
+                }, Convert.ToDouble(F_Coeff.Text.Replace(".", ",")));
 
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
@@ -140,7 +144,7 @@ namespace myPiAPS
 
         private void F_Calc_Click(object sender, EventArgs e)
         {
-            if (CheckForm())
+            if (CheckFormR())
             {
                 ProductWaybills = new List<ProductWaybillBM>();
                 List<ProductBM> list = _serviceM.Sort(Convert.ToInt32(F_Group.SelectedValue));
@@ -171,8 +175,54 @@ namespace myPiAPS
                 {
                     Date = F_Date.Value,
                     ProductWaybills = ProductWaybillBM
-                }, Convert.ToDouble(F_Coeff.Text.Replace(",", "."))) + "";
+                }, Convert.ToDouble(F_Coeff.Text.Replace(".", ","))) + "";
             }
+        }
+
+        private bool CheckFormR()
+        {
+            if (F_Group.SelectedValue == null)
+            {
+                MessageBox.Show("Выберите грппу");
+                return false;
+            }
+
+            //koef
+            string koef;
+            string ko = F_Coeff.Text;
+            ko = ko.Replace(".", ",");
+            int k2 = ko.IndexOf(",");
+            Regex regexCoef = new Regex(@"^[0-9]{0,10}(?:[.,][0-9]{0,2})?\z");
+            if (F_Coeff.Text == "")
+            {
+                MessageBox.Show("Заполните обязательные поля");
+                return false;
+            }
+            if (F_Coeff.Text.Length > 8)
+            {
+                MessageBox.Show("Слишком длинное число. Не более 5 знаков до запятой");
+                return false;
+            }
+            else if (ko.IndexOf(",") != -1)
+            {
+                if (ko.Substring(0, ko.LastIndexOf(',')).Length > 5)
+                {
+                    MessageBox.Show("Слишком длинное число. Не более 5 знаков до запятой");
+                    return false;
+                }
+            }
+            if (regexCoef.IsMatch(F_Coeff.Text))
+            {
+                koef = F_Coeff.Text.Replace(".", ",");
+            }
+            else
+            {
+                MessageBox.Show("Несоответсвие формату коэф");
+                return false;
+            }
+
+
+            return true;
         }
 
         private bool CheckForm()
@@ -180,33 +230,35 @@ namespace myPiAPS
             //sum
             string summa;
             string s = F_Summa.Text;
-            s = s.Replace(",", ".");
-            int k = s.IndexOf(".");
+            s = s.Replace(".", ",");
+            int k = s.IndexOf(",");
             Regex regexSumma = new Regex(@"^[0-9]{0,10}(?:[.,][0-9]{0,2})?\z");
             if (F_Summa.Text == "")
             {
                 MessageBox.Show("Заполните обязательные поля");
                 return false;
             }
-            else if (s.IndexOf(".") != -1)
+            if (F_Summa.Text.Length > 11)
             {
-                if (s.Substring(0, s.LastIndexOf('.')).Length > 11)
+                MessageBox.Show("Слишком длинное число. Не более 11 символов");
+                return false;
+            }
+            else if (s.IndexOf(",") != -1)
+            {
+                if (s.Substring(0, s.LastIndexOf(',')).Length > 8)
                 {
-                    MessageBox.Show("Слишком длинное число. Не более 11 символов");
+                    MessageBox.Show("Слишком длинное число. Не более 8 знаков до запятой");
                     return false;
                 }
-                else
-                {
-                    if (regexSumma.IsMatch(F_Summa.Text))
-                    {
-                        summa = F_Summa.Text.Replace(",", ".");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Несоответсвие формату Сумма");
-                        return false;
-                    }
-                }
+            }
+            if (regexSumma.IsMatch(F_Summa.Text))
+            {
+                summa = F_Summa.Text.Replace(".", ",");
+            }
+            else
+            {
+                MessageBox.Show("Несоответсвие формату Сумма");
+                return false;
             }
 
             if (F_Group.SelectedValue == null)
@@ -218,33 +270,35 @@ namespace myPiAPS
             //koef
             string koef;
             string ko = F_Coeff.Text;
-            ko =ko.Replace(",", ".");
-            int k2 = ko.IndexOf(".");
+            ko =ko.Replace(".", ",");
+            int k2 = ko.IndexOf(",");
             Regex regexCoef = new Regex(@"^[0-9]{0,10}(?:[.,][0-9]{0,2})?\z");
             if (F_Coeff.Text == "")
             {
                 MessageBox.Show("Заполните обязательные поля");
                 return false;
             }
-            else if (ko.IndexOf(".") != -1)
+            if (F_Coeff.Text.Length > 8)
             {
-                if (ko.Substring(0, ko.LastIndexOf('.')).Length > 11)
+                MessageBox.Show("Слишком длинное число. Не более 5 знаков до запятой");
+                return false;
+            }
+            else if (ko.IndexOf(",") != -1)
+            {
+                if (ko.Substring(0, ko.LastIndexOf(',')).Length > 5)
                 {
-                    MessageBox.Show("Слишком длинное число. Не более 11 символов");
+                    MessageBox.Show("Слишком длинное число. Не более 5 знаков до запятой");
                     return false;
                 }
-                else
-                {
-                    if (regexCoef.IsMatch(F_Coeff.Text))
-                    {
-                        koef = F_Coeff.Text.Replace(",", ".");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Несоответсвие формату Сумма");
-                        return false;
-                    }
-                }
+            }
+            if (regexCoef.IsMatch(F_Coeff.Text))
+            {
+                koef = F_Coeff.Text.Replace(".", ",");
+            }
+            else
+            {
+                MessageBox.Show("Несоответсвие формату коэф");
+                return false;
             }
 
 
