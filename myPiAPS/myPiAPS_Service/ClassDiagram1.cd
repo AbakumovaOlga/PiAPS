@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="myPiAPS_Service.BindingModels.ProductBM" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAgQAEAAAAAEAAAAQAAAEQAAAAAACAABAAAAA=</HashCode>
+      <FileName>BindingModels\ProductBM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS_Service.BindingModels.ProductGroupBM" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAQAAAAQ=</HashCode>
+      <FileName>BindingModels\ProductGroupBM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS_Service.BindingModels.ProductWaybillBM" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAAAAAAAAAAAAQAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>BindingModels\ProductWaybillBM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS_Service.BindingModels.ShopHallBM" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAAAAAAAAAAAAAAAAQAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>BindingModels\ShopHallBM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS_Service.BindingModels.StockBM" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>BindingModels\StockBM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS_Service.BindingModels.TypeBM" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAAA=</HashCode>
+      <FileName>BindingModels\TypeBM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS_Service.BindingModels.WaybillBM" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAECAAAAgAAAAAAAAAAABAAAAAAAAAEBgAAIAAAAAAA=</HashCode>
+      <FileName>BindingModels\WaybillBM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS_Service.ImplementationsBD.DelivareServiceBD" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAKAAAAAAAAAAAAAAAAAAAQAIAAAAAAAAAAAAAIAAI=</HashCode>
+      <FileName>ImplementationsBD\DelivareServiceBD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.ImplementationsBD.DiagrServiceBD" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAACAIAA=</HashCode>
+      <FileName>ImplementationsBD\DiagrServiceBD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.ImplementationsBD.MainServiceBD" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAgAAQgAAAAAAAAAAAQQEAAAAAAAA=</HashCode>
+      <FileName>ImplementationsBD\MainServiceBD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.ImplementationsBD.ProdGroupServiceBD" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAEAAAAAAAAAAAAEAAAAAAAAAAAAAgAAAJAAI=</HashCode>
+      <FileName>ImplementationsBD\ProdGroupServiceBD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.ImplementationsBD.ProductServiceBD" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAIABI=</HashCode>
+      <FileName>ImplementationsBD\ProductServiceBD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.ImplementationsBD.RecieptServiceBD" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAKBAI=</HashCode>
+      <FileName>ImplementationsBD\RecieptServiceBD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.ImplementationsBD.RevalServiceBD" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgACAAAAAAQgAAAAAIAAAAAAAgAAAAAAAAAAACkIAAI=</HashCode>
+      <FileName>ImplementationsBD\RevalServiceBD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.ImplementationsBD.SerializeService" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAEAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ImplementationsBD\SerializeService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.ImplementationsBD.ShopHallServiceBD" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAIAAI=</HashCode>
+      <FileName>ImplementationsBD\ShopHallServiceBD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.ImplementationsBD.StockServiceBD" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAEAAAAAAECAAAAAAAAAAAAAJAAI=</HashCode>
+      <FileName>ImplementationsBD\StockServiceBD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.ImplementationsBD.TypeServiceBD" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAAAAAAAAAQAAAAAIAAAAAAAAAAAAAAAAAAAIAAI=</HashCode>
+      <FileName>ImplementationsBD\TypeServiceBD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.ImplementationsBD.UserServiceBD" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAgAAAAAAAAAAAAIAAAAAAAAAAAAAAIAAI=</HashCode>
+      <FileName>ImplementationsBD\UserServiceBD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.ImplementationsBD.WaybillServiceBD" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgACAAAAQAAABAAAAAAQAAAAAAAAAAAAAABAiAAAAAI=</HashCode>
+      <FileName>ImplementationsBD\WaybillServiceBD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.ImplementationsBD.WriteOffServiceBD" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAKABAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAKAAI=</HashCode>
+      <FileName>ImplementationsBD\WriteOffServiceBD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.Logger" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAACAgAAAAAAAAAAhAAAAA=</HashCode>
+      <FileName>Logger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS_Service.PiAPSDbContext" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAgAQAAAAAAAAgAAAAgAAAAAAAAEAAAAAAAAQ=</HashCode>
+      <FileName>PiAPSDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS_Service.Migrations.FirstMigration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201901091243004_FirstMigration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.Migrations.SecondMigration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201901111021575_SecondMigration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.Migrations.ThirdMigration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201901111219080_ThirdMigration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.Migrations.PRODPriceRequired" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201901121103576_PRODPriceRequired.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.Migrations.WBNotRequredIDS" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201901121123352_WBNotRequredIDS.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="myPiAPS_Service.Migrations.Configuration" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Migrations\Configuration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="myPiAPS_Service.Interfaces.IDelivareService" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAQAIAAAAAAAAAAAAAIAAI=</HashCode>
+      <FileName>Interfaces\IDelivareService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="myPiAPS_Service.Interfaces.IDiagrService" Collapsed="true">
+    <Position X="2.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAACAIAA=</HashCode>
+      <FileName>Interfaces\IDiagrService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="myPiAPS_Service.Interfaces.IMainService" Collapsed="true">
+    <Position X="4" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAQgAAAAAAAAAAAQQAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IMainService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="myPiAPS_Service.Interfaces.IProdGroupService" Collapsed="true">
+    <Position X="5.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAEAAAAAAAAAAAAAgAAAJAAI=</HashCode>
+      <FileName>Interfaces\IProdGroupService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="myPiAPS_Service.Interfaces.IProductService" Collapsed="true">
+    <Position X="7.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAIABI=</HashCode>
+      <FileName>Interfaces\IProductService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="myPiAPS_Service.Interfaces.IProductWaybillService" Collapsed="true">
+    <Position X="9.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IProductWaybillService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="myPiAPS_Service.Interfaces.IRecieptService" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAKBAI=</HashCode>
+      <FileName>Interfaces\IRecieptService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="myPiAPS_Service.Interfaces.IRevalService" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAQAAAAAAIAAAAAAAgAAAAAAAAAAACkIAAI=</HashCode>
+      <FileName>Interfaces\IRevalService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="myPiAPS_Service.Interfaces.ISerializeMYService" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAEAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ISerializeMYService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="myPiAPS_Service.Interfaces.IShopHallService" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAIAAI=</HashCode>
+      <FileName>Interfaces\IShopHallService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="myPiAPS_Service.Interfaces.IStockService" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAECAAAAAAAAAAAAAJAAI=</HashCode>
+      <FileName>Interfaces\IStockService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="myPiAPS_Service.Interfaces.ITypeOfWaybillService" Collapsed="true">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAQAAAAAIAAAAAAAAAAAAAAAAAAAIAAI=</HashCode>
+      <FileName>Interfaces\ITypeOfWaybillService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="myPiAPS_Service.Interfaces.IUserService" Collapsed="true">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAgAAAAAAAAAAAAIAAAAAAAAAAAAAAIAAI=</HashCode>
+      <FileName>Interfaces\IUserService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="myPiAPS_Service.Interfaces.IWaybillService" Collapsed="true">
+    <Position X="2.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAQAAABAAAAAAQAAAAAAAAAAAAAABAiAAAAAI=</HashCode>
+      <FileName>Interfaces\IWaybillService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="myPiAPS_Service.Interfaces.IWriteOffService" Collapsed="true">
+    <Position X="4" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAKAAI=</HashCode>
+      <FileName>Interfaces\IWriteOffService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

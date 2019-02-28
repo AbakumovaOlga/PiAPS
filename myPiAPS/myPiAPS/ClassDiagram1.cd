@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="myPiAPS.FormArchive" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAACAAABASKACAIAACAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>FormArchive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.FormDelivary" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MARCAAQAgDAwIBAQAACAAQADAAgAAAAAAGAAQBRBJgg=</HashCode>
+      <FileName>FormDelivary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.FormDiagram" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAASAACAgAAAQAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormDiagram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.FormLess" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IACAAAQAACAgAAAQAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormLess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.FormMainK" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAIgAwAECRgIBAWKBCAIAACAYgBEAQACAAAeFAACAA=</HashCode>
+      <FileName>FormMainK.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.FormMainM" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAAAAARAACAAAQQACACBAAACAGAAAAAIAgAAQAAUAAA=</HashCode>
+      <FileName>FormMainM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.FormPrint" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAIBQAECAAABAQBACAAAASEAAhAIQAAAAAAAAAAAA=</HashCode>
+      <FileName>FormPrint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.FormProductWaybill" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAACAAABIQAACBAAACAAAAQAAAAAAAAAQIACA=</HashCode>
+      <FileName>FormProductWaybill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.FormReceipt" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IARCAAQAgCAwABAQAACBAQADAAgAAAAAACAAQBQBJgg=</HashCode>
+      <FileName>FormReceipt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.FormRev" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABDUAQIgCAAMBgQAACAAAAKAIgAAAAACAAAQBABDgA=</HashCode>
+      <FileName>FormRev.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.FormRevGroup" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBUAQAgCAgEFgQAACABAACAAgABAAIIAAIQBABBAA=</HashCode>
+      <FileName>FormRevGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.FormStart" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgSEACEAABASAACgAAAiAAABAAAIAAAAQgAEEQA=</HashCode>
+      <FileName>FormStart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.FormSumDeliv" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQIECAgAFAwAAKAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormSumDeliv.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.FormSumToday" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABIABQAACAgABAQAACAAAACAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>FormSumToday.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.FormUpdGood" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAECAQABQQAACBAAACAIAAAAAAEAAAQAQACAA=</HashCode>
+      <FileName>FormUpdGood.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.FormWrite" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MARCAAQAgDAwABAQAACBIQADAAgCAAAAACAAQBQBJgg=</HashCode>
+      <FileName>FormWrite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.newPrGroup" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQIACAgAFAAAACAAAAKEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>newPrGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.newProduct" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQIECAiAFAQAACAAAAKAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>newProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.newShopHall" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACQIADAAAFAAAACAAAAKAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>newShopHall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.newStock" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQIACAAAFAQAACAAAAKAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>newStock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.newType" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQIACAAAFAQAACAAAACEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>newType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.newUser" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABASIACAAAFAQAACAAAAiAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>newUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.Program" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.Properties.Resources" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myPiAPS.Properties.Settings" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SqlServerTypes.Utilities" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAQAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>SqlServerTypes\Loader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -85,7 +85,6 @@ namespace myPiAPS
 
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
-                Close();
             }
             catch (Exception ex)
             {
@@ -303,6 +302,12 @@ namespace myPiAPS
 
 
             return true;
+        }
+
+        private void F_Print_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormPrint>();
+            form.Show();
         }
     }
 }

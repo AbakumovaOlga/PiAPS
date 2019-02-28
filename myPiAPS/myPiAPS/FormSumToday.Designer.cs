@@ -39,6 +39,7 @@
             this.F_TodayList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.F_TodayList.Location = new System.Drawing.Point(12, 12);
             this.F_TodayList.Name = "F_TodayList";
+            this.F_TodayList.ReadOnly = true;
             this.F_TodayList.RowTemplate.Height = 28;
             this.F_TodayList.Size = new System.Drawing.Size(776, 380);
             this.F_TodayList.TabIndex = 0;

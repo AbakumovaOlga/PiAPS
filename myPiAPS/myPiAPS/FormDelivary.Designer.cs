@@ -42,6 +42,7 @@
             this.F_Save = new System.Windows.Forms.Button();
             this.F_ShopHall = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.F_Print = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.F_Products)).BeginInit();
             this.SuspendLayout();
@@ -88,6 +89,7 @@
             this.F_Products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.F_Products.Location = new System.Drawing.Point(21, 36);
             this.F_Products.Name = "F_Products";
+            this.F_Products.ReadOnly = true;
             this.F_Products.RowTemplate.Height = 28;
             this.F_Products.Size = new System.Drawing.Size(527, 342);
             this.F_Products.TabIndex = 8;
@@ -133,6 +135,7 @@
             // 
             this.F_Summa.Location = new System.Drawing.Point(123, 248);
             this.F_Summa.Name = "F_Summa";
+            this.F_Summa.ReadOnly = true;
             this.F_Summa.Size = new System.Drawing.Size(305, 26);
             this.F_Summa.TabIndex = 58;
             // 
@@ -172,11 +175,22 @@
             this.label4.TabIndex = 66;
             this.label4.Text = "ShopHall";
             // 
+            // F_Print
+            // 
+            this.F_Print.Location = new System.Drawing.Point(387, 384);
+            this.F_Print.Name = "F_Print";
+            this.F_Print.Size = new System.Drawing.Size(109, 54);
+            this.F_Print.TabIndex = 68;
+            this.F_Print.Text = "Print doc";
+            this.F_Print.UseVisualStyleBackColor = true;
+            this.F_Print.Click += new System.EventHandler(this.F_Print_Click);
+            // 
             // FormDelivary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1482, 525);
+            this.Controls.Add(this.F_Print);
             this.Controls.Add(this.F_ShopHall);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label9);
@@ -214,5 +228,6 @@
         private System.Windows.Forms.Button F_Save;
         private System.Windows.Forms.ComboBox F_ShopHall;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button F_Print;
     }
 }

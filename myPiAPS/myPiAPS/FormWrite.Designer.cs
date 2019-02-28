@@ -42,6 +42,7 @@
             this.F_Save = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.F_Customer = new System.Windows.Forms.TextBox();
+            this.F_Print = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.F_Products)).BeginInit();
             this.SuspendLayout();
@@ -88,6 +89,7 @@
             this.F_Products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.F_Products.Location = new System.Drawing.Point(21, 36);
             this.F_Products.Name = "F_Products";
+            this.F_Products.ReadOnly = true;
             this.F_Products.RowTemplate.Height = 28;
             this.F_Products.Size = new System.Drawing.Size(527, 342);
             this.F_Products.TabIndex = 8;
@@ -133,6 +135,7 @@
             // 
             this.F_Summa.Location = new System.Drawing.Point(204, 265);
             this.F_Summa.Name = "F_Summa";
+            this.F_Summa.ReadOnly = true;
             this.F_Summa.Size = new System.Drawing.Size(305, 26);
             this.F_Summa.TabIndex = 47;
             // 
@@ -171,11 +174,22 @@
             this.F_Customer.Size = new System.Drawing.Size(305, 26);
             this.F_Customer.TabIndex = 54;
             // 
+            // F_Print
+            // 
+            this.F_Print.Location = new System.Drawing.Point(501, 333);
+            this.F_Print.Name = "F_Print";
+            this.F_Print.Size = new System.Drawing.Size(109, 54);
+            this.F_Print.TabIndex = 55;
+            this.F_Print.Text = "Print doc";
+            this.F_Print.UseVisualStyleBackColor = true;
+            this.F_Print.Click += new System.EventHandler(this.F_Print_Click);
+            // 
             // FormWrite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1520, 497);
+            this.Controls.Add(this.F_Print);
             this.Controls.Add(this.F_Customer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label9);
@@ -212,5 +226,6 @@
         private System.Windows.Forms.Button F_Save;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox F_Customer;
+        private System.Windows.Forms.Button F_Print;
     }
 }

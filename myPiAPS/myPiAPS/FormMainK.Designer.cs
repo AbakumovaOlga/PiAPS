@@ -73,6 +73,7 @@
             this.F_GoodsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.F_GoodsList.Location = new System.Drawing.Point(12, 58);
             this.F_GoodsList.Name = "F_GoodsList";
+            this.F_GoodsList.ReadOnly = true;
             this.F_GoodsList.RowTemplate.Height = 28;
             this.F_GoodsList.Size = new System.Drawing.Size(776, 315);
             this.F_GoodsList.TabIndex = 2;

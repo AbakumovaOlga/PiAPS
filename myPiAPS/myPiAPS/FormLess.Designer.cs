@@ -37,6 +37,7 @@
             this.F_Products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.F_Products.Location = new System.Drawing.Point(12, 12);
             this.F_Products.Name = "F_Products";
+            this.F_Products.ReadOnly = true;
             this.F_Products.RowTemplate.Height = 28;
             this.F_Products.Size = new System.Drawing.Size(776, 426);
             this.F_Products.TabIndex = 0;

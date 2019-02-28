@@ -44,6 +44,7 @@
             this.F_DocList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.F_DocList.Location = new System.Drawing.Point(12, 69);
             this.F_DocList.Name = "F_DocList";
+            this.F_DocList.ReadOnly = true;
             this.F_DocList.RowTemplate.Height = 28;
             this.F_DocList.Size = new System.Drawing.Size(878, 369);
             this.F_DocList.TabIndex = 0;

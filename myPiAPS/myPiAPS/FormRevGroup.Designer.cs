@@ -40,6 +40,7 @@
             this.F_Summa = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.F_Calc = new System.Windows.Forms.Button();
+            this.F_Print = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.F_ListProd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             this.F_ListProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.F_ListProd.Location = new System.Drawing.Point(12, 12);
             this.F_ListProd.Name = "F_ListProd";
+            this.F_ListProd.ReadOnly = true;
             this.F_ListProd.RowTemplate.Height = 28;
             this.F_ListProd.Size = new System.Drawing.Size(776, 307);
             this.F_ListProd.TabIndex = 0;
@@ -116,7 +118,7 @@
             // 
             // F_Date
             // 
-            this.F_Date.Location = new System.Drawing.Point(124, 452);
+            this.F_Date.Location = new System.Drawing.Point(139, 452);
             this.F_Date.Name = "F_Date";
             this.F_Date.Size = new System.Drawing.Size(200, 26);
             this.F_Date.TabIndex = 45;
@@ -125,6 +127,7 @@
             // 
             this.F_Summa.Location = new System.Drawing.Point(139, 504);
             this.F_Summa.Name = "F_Summa";
+            this.F_Summa.ReadOnly = true;
             this.F_Summa.Size = new System.Drawing.Size(305, 26);
             this.F_Summa.TabIndex = 51;
             // 
@@ -147,11 +150,22 @@
             this.F_Calc.UseVisualStyleBackColor = true;
             this.F_Calc.Click += new System.EventHandler(this.F_Calc_Click);
             // 
+            // F_Print
+            // 
+            this.F_Print.Location = new System.Drawing.Point(640, 476);
+            this.F_Print.Name = "F_Print";
+            this.F_Print.Size = new System.Drawing.Size(109, 54);
+            this.F_Print.TabIndex = 53;
+            this.F_Print.Text = "Print doc";
+            this.F_Print.UseVisualStyleBackColor = true;
+            this.F_Print.Click += new System.EventHandler(this.F_Print_Click);
+            // 
             // FormRevGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 571);
+            this.Controls.Add(this.F_Print);
             this.Controls.Add(this.F_Calc);
             this.Controls.Add(this.F_Summa);
             this.Controls.Add(this.label3);
@@ -187,5 +201,6 @@
         private System.Windows.Forms.TextBox F_Summa;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button F_Calc;
+        private System.Windows.Forms.Button F_Print;
     }
 }

@@ -34,6 +34,8 @@
             this.F_Login = new System.Windows.Forms.TextBox();
             this.F_Choose = new System.Windows.Forms.Button();
             this.F_CrUser = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -89,11 +91,31 @@
             this.F_CrUser.UseVisualStyleBackColor = true;
             this.F_CrUser.Click += new System.EventHandler(this.F_CrUser_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 398);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(534, 20);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "система учета наличия и движения товаров в торговой организации";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(404, 418);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(142, 20);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Абакумова Ольга";
+            // 
             // FormStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.F_CrUser);
             this.Controls.Add(this.F_Choose);
             this.Controls.Add(this.label2);
@@ -115,5 +137,7 @@
         private System.Windows.Forms.TextBox F_Login;
         private System.Windows.Forms.Button F_Choose;
         private System.Windows.Forms.Button F_CrUser;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
